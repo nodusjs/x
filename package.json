@@ -1,4 +1,7 @@
 {
+	"dependencies": {
+		"@nodusjs/std": "0.16.0"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@commitlint/cli": "^19.8.1",
