@@ -12,7 +12,7 @@
 		"typescript": "^5.8.3",
 		"vite": "^6.3.5"
 	},
-	"files": "dist",
+	"files": ["dist"],
 	"license": "MIT",
 	"main": "dist/x.cjs",
 	"module": "dist/x.js",
@@ -28,5 +28,5 @@
 	},
 	"source": "src/index.js",
 	"type": "module",
-	"version": "0.0.2"
+	"version": "0.0.3"
 }
