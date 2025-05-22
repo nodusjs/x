@@ -1,0 +1,175 @@
+:root {
+	/**
+	 * Texto primário
+	 * Texto principal como títulos de páginas.
+	 */
+	--text-primary: light-dark(var(--color-gray-900), var(--color-gray-50));
+
+	/**
+	 * Texto primário em fundo de marca
+	 * Texto primário sobre fundos sólidos da cor da marca.
+	 */
+	--text-primary_on-brand: light-dark(
+		var(--color-base-white),
+		var(--color-gray-50)
+	);
+
+	/**
+	 * Texto secundário
+	 * Texto secundário como rótulos e cabeçalhos de seção.
+	 */
+	--text-secondary: light-dark(var(--color-gray-700), var(--color-gray-300));
+
+	/**
+	 * Texto secundário (hover)
+	 * Texto secundário em estado de hover.
+	 */
+	--text-secondary_hover: light-dark(
+		var(--color-gray-800),
+		var(--color-gray-200)
+	);
+
+	/**
+	 * Texto secundário em fundo de marca
+	 * Texto secundário sobre fundos sólidos da cor da marca.
+	 */
+	--text-secondary_on-brand: light-dark(
+		var(--color-brand-200),
+		var(--color-gray-300)
+	);
+
+	/**
+	 * Texto terciário
+	 * Texto terciário como texto de suporte e parágrafos.
+	 */
+	--text-tertiary: light-dark(var(--color-gray-600), var(--color-gray-400));
+
+	/**
+	 * Texto terciário (hover)
+	 * Texto terciário em estado de hover.
+	 */
+	--text-tertiary_hover: light-dark(
+		var(--color-gray-700),
+		var(--color-gray-300)
+	);
+
+	/**
+	 * Texto terciário em fundo de marca
+	 * Texto terciário sobre fundos sólidos da cor da marca.
+	 */
+	--text-tertiary_on-brand: light-dark(
+		var(--color-brand-200),
+		var(--color-gray-400)
+	);
+
+	/**
+	 * Texto quaternário
+	 * Texto quaternário para texto mais sutil, como títulos de colunas de rodapé.
+	 */
+	--text-quaternary: light-dark(var(--color-gray-500), var(--color-gray-400));
+
+	/**
+	 * Texto quaternário em fundo de marca
+	 * Texto quaternário sobre fundos sólidos da cor da marca.
+	 */
+	--text-quaternary_on-brand: light-dark(
+		var(--color-brand-300),
+		var(--color-gray-400)
+	);
+
+	/**
+	 * Texto branco
+	 * Texto que é sempre branco, independentemente do modo.
+	 */
+	--text-white: light-dark(var(--color-base-white), var(--color-base-white));
+
+	/**
+	 * Texto desabilitado
+	 * Cor padrão para texto desabilitado, como inputs e botões desativados.
+	 */
+	--text-disabled: light-dark(var(--color-gray-500), var(--color-gray-500));
+
+	/**
+	 * Placeholder
+	 * Cor padrão para texto placeholder, como em campos de formulário.
+	 */
+	--text-placeholder: light-dark(var(--color-gray-500), var(--color-gray-400));
+
+	/**
+	 * Placeholder (sutil)
+	 * Versão de menor contraste para texto placeholder, útil em campos de código de verificação.
+	 */
+	--text-placeholder_subtle: light-dark(
+		var(--color-gray-300),
+		var(--color-gray-700)
+	);
+
+	/**
+	 * Texto primário da marca
+	 * Texto principal da marca, útil para títulos (ex. cards em cabeçalhos de página de preços).
+	 */
+	--text-brand-primary: light-dark(var(--color-brand-900), var(--color-gray-50));
+
+	/**
+	 * Texto secundário da marca
+	 * Texto secundário da marca para botões, textos destacados e subtítulos (ex. subtítulos em cards de blog).
+	 */
+	--text-brand-secondary: light-dark(
+		var(--color-brand-700),
+		var(--color-gray-300)
+	);
+
+	/**
+	 * Texto secundário da marca (hover)
+	 * Texto secundário da marca em estado de hover (ex. botões da marca).
+	 */
+	--text-brand-secondary_hover: light-dark(
+		var(--color-brand-800),
+		var(--color-gray-300)
+	);
+
+	/**
+	 * Texto terciário da marca
+	 * Texto terciário da marca para realces leves (ex. números em cards métricos).
+	 */
+	--text-brand-tertiary: light-dark(
+		var(--color-brand-600),
+		var(--color-gray-400)
+	);
+
+	/**
+	 * Texto terciário da marca alternativo
+	 * Versão mais clara no modo escuro para texto terciário da marca.
+	 */
+	--text-brand-tertiary_alt: light-dark(
+		var(--color-brand-600),
+		var(--color-gray-50)
+	);
+
+	/**
+	 * Texto de erro primário
+	 * Cor semântica padrão para texto em estado de erro (ex. erros em campos de formulário).
+	 */
+	--text-error-primary: light-dark(
+		var(--color-error-600),
+		var(--color-error-400)
+	);
+
+	/**
+	 * Texto de aviso primário
+	 * Cor semântica padrão para texto em estado de aviso.
+	 */
+	--text-warning-primary: light-dark(
+		var(--color-warning-600),
+		var(--color-warning-400)
+	);
+
+	/**
+	 * Texto de sucesso primário
+	 * Cor semântica padrão para texto em estado de sucesso.
+	 */
+	--text-success-primary: light-dark(
+		var(--color-success-600),
+		var(--color-success-400)
+	);
+}

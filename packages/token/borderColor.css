@@ -1,0 +1,77 @@
+:root {
+	/**
+	 * Borda primária
+	 * Bordas de alto contraste usadas em componentes como campos de entrada,
+	 * grupos de botões e checkboxes.
+	 */
+	--border-primary: light-dark(var(--color-gray-300), var(--color-gray-700));
+
+	/**
+	 * Borda secundária
+	 * Bordas de contraste médio, padrão para a maioria dos componentes
+	 * (file uploaders, cards e divisores de conteúdo).
+	 */
+	--border-secondary: light-dark(var(--color-gray-200), var(--color-gray-800));
+
+	/**
+	 * Borda secundária alternativa
+	 * Variante com transparência alfa (8%) para menus flutuantes
+	 * como dropdowns e notificações, criando uma linha inferior mais nítida.
+	 */
+	--border-secondary_alt: light-dark(rgba(0, 0, 0, 0.08), var(--color-gray-800));
+
+	/**
+	 * Borda terciária
+	 * Bordas de baixo contraste para divisores muito sutis,
+	 * como eixos de gráficos de linha e barras.
+	 */
+	--border-tertiary: light-dark(var(--color-gray-100), var(--color-gray-800));
+
+	/**
+	 * Borda desabilitada
+	 * Cor padrão para estados desabilitados em componentes
+	 * como campos de entrada e checkboxes.
+	 */
+	--border-disabled: light-dark(var(--color-gray-300), var(--color-gray-700));
+
+	/**
+	 * Borda desabilitada sutil
+	 * Variante de contraste ainda menor para bordas desabilitadas,
+	 * útil para botões no estado desativado.
+	 */
+	--border-disabled_subtle: light-dark(
+		var(--color-gray-200),
+		var(--color-gray-800)
+	);
+
+	/**
+	 * Borda da marca
+	 * Cor de borda padrão da marca, útil para estados ativos
+	 * em componentes como campos de entrada.
+	 */
+	--border-brand: light-dark(var(--color-brand-500), var(--color-brand-400));
+
+	/**
+	 * Borda da marca alternativa
+	 * Variante que se torna cinza no modo escuro, usada em
+	 * componentes estilo “banner” e rodapés da marca.
+	 */
+	--border-brand_alt: light-dark(var(--color-brand-600), var(--color-gray-700));
+
+	/**
+	 * Borda de erro
+	 * Cor semântica padrão para bordas em estado de erro,
+	 * usada em componentes como campos de formulário e uploaders.
+	 */
+	--border-error: light-dark(var(--color-error-500), var(--color-error-400));
+
+	/**
+	 * Borda de erro sutil
+	 * Variante de contraste reduzido para bordas semânticas de erro,
+	 * útil em campos de formulário com estado de erro menos severo.
+	 */
+	--border-error_subtle: light-dark(
+		var(--color-error-300),
+		var(--color-error-500)
+	);
+}

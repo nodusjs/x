@@ -1,0 +1,103 @@
+:root {
+	/**
+	 * spacing-none
+	 * Sem espaçamento.
+	 */
+	--spacing-none: 0px;
+
+	/**
+	 * spacing-xxs
+	 * Espaçamento extra-extra-pequeno (2px).
+	 */
+	--spacing-xxs: 2px;
+
+	/**
+	 * spacing-xs
+	 * Espaçamento extra-pequeno (4px).
+	 */
+	--spacing-xs: 4px;
+
+	/**
+	 * spacing-sm
+	 * Espaçamento pequeno (6px).
+	 */
+	--spacing-sm: 6px;
+
+	/**
+	 * spacing-md
+	 * Espaçamento médio (8px).
+	 */
+	--spacing-md: 8px;
+
+	/**
+	 * spacing-lg
+	 * Espaçamento grande (12px).
+	 */
+	--spacing-lg: 12px;
+
+	/**
+	 * spacing-xl
+	 * Espaçamento extra-grande (16px).
+	 */
+	--spacing-xl: 16px;
+
+	/**
+	 * spacing-2xl
+	 * Espaçamento 2× extra-grande (20px).
+	 */
+	--spacing-2xl: 20px;
+
+	/**
+	 * spacing-3xl
+	 * Espaçamento 3× extra-grande (24px).
+	 */
+	--spacing-3xl: 24px;
+
+	/**
+	 * spacing-4xl
+	 * Espaçamento 4× extra-grande (32px).
+	 */
+	--spacing-4xl: 32px;
+
+	/**
+	 * spacing-5xl
+	 * Espaçamento 5× extra-grande (40px).
+	 */
+	--spacing-5xl: 40px;
+
+	/**
+	 * spacing-6xl
+	 * Espaçamento 6× extra-grande (48px).
+	 */
+	--spacing-6xl: 48px;
+
+	/**
+	 * spacing-7xl
+	 * Espaçamento 7× extra-grande (64px).
+	 */
+	--spacing-7xl: 64px;
+
+	/**
+	 * spacing-8xl
+	 * Espaçamento 8× extra-grande (80px).
+	 */
+	--spacing-8xl: 80px;
+
+	/**
+	 * spacing-9xl
+	 * Espaçamento 9× extra-grande (96px).
+	 */
+	--spacing-9xl: 96px;
+
+	/**
+	 * spacing-10xl
+	 * Espaçamento 10× extra-grande (128px).
+	 */
+	--spacing-10xl: 128px;
+
+	/**
+	 * spacing-11xl
+	 * Espaçamento 11× extra-grande (160px).
+	 */
+	--spacing-11xl: 160px;
+}

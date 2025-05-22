@@ -1,0 +1,9 @@
+:root {
+	/**
+	 * paragraph-max-width
+	 * Define a largura máxima do texto de parágrafo (ex.: posts de blog),
+	 * garantindo uma medida otimizada para leitura.
+	 * Max-width: 720px
+	 */
+	--paragraph-max-width: 720px;
+}

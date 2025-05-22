@@ -1,0 +1,132 @@
+:root {
+	/**
+	 * Base
+	 *
+	 * Estas são as cores base (branco e preto) para você alternar rapidamente,
+	 * caso precise.
+	 */
+	--color-base-white: #ffffff;
+	--color-base-black: #000000;
+	--color-base-transparent: #ffffff 0%;
+
+	/**
+	 * Cinza (modo claro)
+	 *
+	 * Cinza é uma cor neutra e é a base do sistema de cores.
+	 * Quase tudo em design de interface — texto, campos de formulário,
+	 * fundos, divisores — normalmente é cinza.
+	 */
+	@media (prefers-color-scheme: light) {
+		--color-gray-25: #fdfdfd;
+		--color-gray-50: #fafafa;
+		--color-gray-100: #f5f5f5;
+		--color-gray-200: #e9eaeb;
+		--color-gray-300: #d5d7da;
+		--color-gray-400: #a4a7ae;
+		--color-gray-500: #717680;
+		--color-gray-600: #535862;
+		--color-gray-700: #414651;
+		--color-gray-800: #252b37;
+		--color-gray-900: #181d27;
+		--color-gray-950: #0a0d12;
+	}
+
+	/**
+	 * Cinza (modo escuro)
+	 *
+	 * Esta é uma paleta de cinza separada usada especificamente para o modo escuro.
+	 * Essa cor foi dessaturada e otimizada para funcionar bem com variáveis do modo escuro.
+	 */
+	@media (prefers-color-scheme: dark) {
+		--color-gray-25: #fafafa;
+		--color-gray-50: #f7f7f7;
+		--color-gray-100: #f0f0f1;
+		--color-gray-200: #ececed;
+		--color-gray-300: #cecfd2;
+		--color-gray-400: #94979c;
+		--color-gray-500: #85888e;
+		--color-gray-600: #61656c;
+		--color-gray-700: #373a41;
+		--color-gray-800: #22262f;
+		--color-gray-900: #13161b;
+		--color-gray-950: #0c0e12;
+	}
+
+	/**
+	 * Marca
+	 *
+	 * A cor da marca é sua cor “primária” e é usada em todos os elementos
+	 * interativos — botões, links, inputs etc. — podendo definir a sensação
+	 * geral e evocar emoções.
+	 */
+	--color-brand-25: #fcfaff;
+	--color-brand-50: #f9f5ff;
+	--color-brand-100: #f4ebff;
+	--color-brand-200: #e9d7fe;
+	--color-brand-300: #d6bbfb;
+	--color-brand-400: #b692f6;
+	--color-brand-500: #9e77ed;
+	--color-brand-600: #7f56d9;
+	--color-brand-700: #6941c6;
+	--color-brand-800: #53389e;
+	--color-brand-900: #42307d;
+	--color-brand-950: #2c1c5f;
+
+	/**
+	 * Erro
+	 *
+	 * Cores de erro são usadas em estados de erro e em ações “destrutivas”.
+	 * Elas comunicam uma ação negativa, como remover um usuário da equipe.
+	 */
+	--color-error-25: #fffbfa;
+	--color-error-50: #fef3f2;
+	--color-error-100: #fee4e2;
+	--color-error-200: #fecdca;
+	--color-error-300: #fda29b;
+	--color-error-400: #f97066;
+	--color-error-500: #f04438;
+	--color-error-600: #d92d20;
+	--color-error-700: #b42318;
+	--color-error-800: #912018;
+	--color-error-900: #7a271a;
+	--color-error-950: #55160c;
+
+	/**
+	 * Aviso
+	 *
+	 * Cores de aviso podem indicar que uma ação é potencialmente destrutiva
+	 * ou “em espera”. São comumente usadas em confirmações para chamar
+	 * a atenção do usuário.
+	 */
+	--color-warning-25: #fffcf5;
+	--color-warning-50: #fffaeb;
+	--color-warning-100: #fef0c7;
+	--color-warning-200: #fedf89;
+	--color-warning-300: #fec84b;
+	--color-warning-400: #fdb022;
+	--color-warning-500: #f79009;
+	--color-warning-600: #dc6803;
+	--color-warning-700: #b54708;
+	--color-warning-800: #93370d;
+	--color-warning-900: #7a2e0e;
+	--color-warning-950: #4e1d09;
+
+	/**
+	 * Sucesso
+	 *
+	 * Cores de sucesso comunicam ações positivas, tendências favoráveis
+	 * ou confirmações bem-sucedidas. Útil diferenciar do verde primário.
+	 */
+	--color-success-25: #f6fef9;
+	--color-success-50: #ecfdf3;
+	--color-success-100: #dcfae6;
+	--color-success-200: #abfec6;
+	--color-success-300: #75e0a7;
+	--color-success-400: #47cd89;
+	--color-success-500: #17b26a;
+	--color-success-600: #079455;
+	--color-success-700: #067647;
+	--color-success-800: #085d3a;
+	--color-success-900: #074d31;
+	--color-success-950: #053321;
+}
