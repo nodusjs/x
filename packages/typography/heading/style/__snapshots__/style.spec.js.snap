@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`style > gera o CSS esperado com valores padrão 1`] = `":host { font-size: var(--font-size-display-md); line-height: var(--line-height-display-md); }"`;
