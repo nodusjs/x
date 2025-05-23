@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`style > gera o CSS esperado com valores customizados e on-brand 1`] = `":host { color: var(--text-secondary_on-brand); display: inline-flex; font-family: var(--font-family-base); font-size: var(--font-size-text-xl); font-weight: var(--font-weight-bold); line-height: var(--line-height-text-xl); text-align: center; text-wrap: no-wrap; width: var(--paragraph-max-width); }"`;
+
+exports[`style > gera o CSS esperado com valores padrão 1`] = `":host { color: var(--text-primary); display: inline-flex; font-family: var(--font-family-base); font-size: var(--font-size-text-md); font-weight: var(--font-weight-medium); line-height: var(--line-height-text-md); text-align: left; text-wrap: wrap; width: var(--paragraph-max-width); }"`;

@@ -13,8 +13,4 @@ export const style = (text) =>
       text-wrap: ${text.wrap};
       width: var(--paragraph-max-width);
     }
-
-    :host:hover {
-      color: var(--text-${text.color}_hover);
-    }
   `;
