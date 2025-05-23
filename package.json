@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@nodusjs/std": "0.16.2"
+    "@nodusjs/std": "0.16.3"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

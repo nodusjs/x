@@ -5,7 +5,7 @@ export const style = (text) =>
     :host {
       color: var(--text-${text.color}${text.onBrand ? "_on-brand" : ""});
       display: inline;
-      font-family: var(--font-family);
+      font-family: var(--font-family-base);
       font-size: var(--font-size-text-${text.size});
       font-weight: var(--font-weight-${text.weight});
       line-height: var(--line-height-text-${text.size});
