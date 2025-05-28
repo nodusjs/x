@@ -8,6 +8,9 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+		  "style": {
+		    "noCommaOperator": "off"
+		  },
 			"suspicious": {
 				"noAssignInExpressions": "off"
 			}
