@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import Heading from './heading.ts'
+import Heading from './heading'
 
 describe('Heading', () => {
   let heading
@@ -32,6 +32,10 @@ describe('Heading', () => {
     expect(heading.weight).toBe('medium')
   })
 
+  it('deve ter as padrão "h1"', () => {
+    expect(heading.as).toBe('h1')
+  })
+
   it('atualiza align corretamente', () => {
     heading.align = 'center'
     expect(heading.align).toBe('center')
@@ -62,5 +66,10 @@ describe('Heading', () => {
   it('atualiza weight corretamente', () => {
     heading.weight = 'bold'
     expect(heading.weight).toBe('bold')
+  })
+
+  it('atualiza as corretamente', () => {
+    heading.as = 'h2'
+    expect(heading.as).toBe('h2')
   })
 })

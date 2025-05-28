@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import Text from './text.ts'
+import Text from './text'
 
 describe('Text', () => {
   let text
@@ -32,6 +32,10 @@ describe('Text', () => {
     expect(text.weight).toBe('medium')
   })
 
+  it('deve ter as (tag) padrão "p"', () => {
+    expect(text.as).toBe('p')
+  })
+
   it('atualiza align corretamente', () => {
     text.align = 'center'
     expect(text.align).toBe('center')
@@ -62,5 +66,10 @@ describe('Text', () => {
   it('atualiza weight corretamente', () => {
     text.weight = 'bold'
     expect(text.weight).toBe('bold')
+  })
+
+  it('atualiza as (tag) corretamente', () => {
+    text.as = 'span'
+    expect(text.as).toBe('span')
   })
 })

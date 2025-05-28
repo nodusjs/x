@@ -4,6 +4,7 @@ import { style } from './style.js'
 describe('style', () => {
   it('gera o CSS esperado com valores padrão', () => {
     const text = {
+      as:      'h1',
       size:    'md',
     }
 
