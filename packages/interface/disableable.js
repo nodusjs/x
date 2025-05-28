@@ -37,4 +37,4 @@
  * btn.disabled = true   // internals.states.add('disabled')
  * btn.disabled = false  // internals.states.delete('disabled')
  */
-export const disableable = Symbol('disableable')
+export const disableable = Symbol("disableable");

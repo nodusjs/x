@@ -1,127 +1,127 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
-	/**
-	 * Família de fonte base
-	 * Fonte principal usada em todo o sistema de design.
-	 */
-	--font-family-base: "Inter", sans-serif;
+  /**
+   * Família de fonte base
+   * Fonte principal usada em todo o sistema de design.
+   */
+  --font-family-base: "Inter", sans-serif;
 
-	/**
-	 * Peso da fonte Regular
-	 * Uso geral para textos.
-	 */
-	--font-weight-regular: 400;
+  /**
+   * Peso da fonte Regular
+   * Uso geral para textos.
+   */
+  --font-weight-regular: 400;
 
-	/**
-	 * Peso da fonte Medium
-	 * Uso em ênfases leves.
-	 */
-	--font-weight-medium: 500;
+  /**
+   * Peso da fonte Medium
+   * Uso em ênfases leves.
+   */
+  --font-weight-medium: 500;
 
-	/**
-	 * Peso da fonte Semibold
-	 * Uso em títulos secundários.
-	 */
-	--font-weight-semibold: 600;
+  /**
+   * Peso da fonte Semibold
+   * Uso em títulos secundários.
+   */
+  --font-weight-semibold: 600;
 
-	/**
-	 * Peso da fonte Bold
-	 * Uso em títulos principais e ênfases fortes.
-	 */
-	--font-weight-bold: 700;
+  /**
+   * Peso da fonte Bold
+   * Uso em títulos principais e ênfases fortes.
+   */
+  --font-weight-bold: 700;
 
-	/**
-	 * Display 2xl
-	 * Uso: títulos de destaque (hero, banners).
-	 * font-size: 72px | line-height: 90px | letter-spacing: -2%
-	 */
-	--font-size-display-2xl: 72px;
-	--line-height-display-2xl: 90px;
-	--letter-spacing-display-2xl: -0.02em;
+  /**
+   * Display 2xl
+   * Uso: títulos de destaque (hero, banners).
+   * font-size: 72px | line-height: 90px | letter-spacing: -2%
+   */
+  --font-size-display-2xl: 72px;
+  --line-height-display-2xl: 90px;
+  --letter-spacing-display-2xl: -0.02em;
 
-	/**
-	 * Display xl
-	 * Uso: títulos grandes.
-	 * font-size: 60px | line-height: 72px | letter-spacing: -2%
-	 */
-	--font-size-display-xl: 60px;
-	--line-height-display-xl: 72px;
-	--letter-spacing-display-xl: -0.02em;
+  /**
+   * Display xl
+   * Uso: títulos grandes.
+   * font-size: 60px | line-height: 72px | letter-spacing: -2%
+   */
+  --font-size-display-xl: 60px;
+  --line-height-display-xl: 72px;
+  --letter-spacing-display-xl: -0.02em;
 
-	/**
-	 * Display lg
-	 * Uso: títulos médios.
-	 * font-size: 48px | line-height: 60px | letter-spacing: -2%
-	 */
-	--font-size-display-lg: 48px;
-	--line-height-display-lg: 60px;
-	--letter-spacing-display-lg: -0.02em;
+  /**
+   * Display lg
+   * Uso: títulos médios.
+   * font-size: 48px | line-height: 60px | letter-spacing: -2%
+   */
+  --font-size-display-lg: 48px;
+  --line-height-display-lg: 60px;
+  --letter-spacing-display-lg: -0.02em;
 
-	/**
-	 * Display md
-	 * Uso: sub-títulos.
-	 * font-size: 36px | line-height: 44px | letter-spacing: -2%
-	 */
-	--font-size-display-md: 36px;
-	--line-height-display-md: 44px;
-	--letter-spacing-display-md: -0.02em;
+  /**
+   * Display md
+   * Uso: sub-títulos.
+   * font-size: 36px | line-height: 44px | letter-spacing: -2%
+   */
+  --font-size-display-md: 36px;
+  --line-height-display-md: 44px;
+  --letter-spacing-display-md: -0.02em;
 
-	/**
-	 * Display sm
-	 * Uso: títulos secundários.
-	 * font-size: 30px | line-height: 38px | letter-spacing: -2%
-	 */
-	--font-size-display-sm: 30px;
-	--line-height-display-sm: 38px;
-	--letter-spacing-display-sm: -0.02em;
+  /**
+   * Display sm
+   * Uso: títulos secundários.
+   * font-size: 30px | line-height: 38px | letter-spacing: -2%
+   */
+  --font-size-display-sm: 30px;
+  --line-height-display-sm: 38px;
+  --letter-spacing-display-sm: -0.02em;
 
-	/**
-	 * Display xs
-	 * Uso: destaques pequenos.
-	 * font-size: 24px | line-height: 32px | letter-spacing: -2%
-	 */
-	--font-size-display-xs: 24px;
-	--line-height-display-xs: 32px;
-	--letter-spacing-display-xs: -0.02em;
+  /**
+   * Display xs
+   * Uso: destaques pequenos.
+   * font-size: 24px | line-height: 32px | letter-spacing: -2%
+   */
+  --font-size-display-xs: 24px;
+  --line-height-display-xs: 32px;
+  --letter-spacing-display-xs: -0.02em;
 
-	/**
-	 * Text xl
-	 * Uso: texto de grande ênfase.
-	 * font-size: 20px | line-height: 30px
-	 */
-	--font-size-text-xl: 20px;
-	--line-height-text-xl: 30px;
+  /**
+   * Text xl
+   * Uso: texto de grande ênfase.
+   * font-size: 20px | line-height: 30px
+   */
+  --font-size-text-xl: 20px;
+  --line-height-text-xl: 30px;
 
-	/**
-	 * Text lg
-	 * Uso: texto destacado.
-	 * font-size: 18px | line-height: 28px
-	 */
-	--font-size-text-lg: 18px;
-	--line-height-text-lg: 28px;
+  /**
+   * Text lg
+   * Uso: texto destacado.
+   * font-size: 18px | line-height: 28px
+   */
+  --font-size-text-lg: 18px;
+  --line-height-text-lg: 28px;
 
-	/**
-	 * Text md
-	 * Uso: texto padrão de parágrafo.
-	 * font-size: 16px | line-height: 24px
-	 */
-	--font-size-text-md: 16px;
-	--line-height-text-md: 24px;
+  /**
+   * Text md
+   * Uso: texto padrão de parágrafo.
+   * font-size: 16px | line-height: 24px
+   */
+  --font-size-text-md: 16px;
+  --line-height-text-md: 24px;
 
-	/**
-	 * Text sm
-	 * Uso: texto de legenda.
-	 * font-size: 14px | line-height: 20px
-	 */
-	--font-size-text-sm: 14px;
-	--line-height-text-sm: 20px;
+  /**
+   * Text sm
+   * Uso: texto de legenda.
+   * font-size: 14px | line-height: 20px
+   */
+  --font-size-text-sm: 14px;
+  --line-height-text-sm: 20px;
 
-	/**
-	 * Text xs
-	 * Uso: texto auxiliar.
-	 * font-size: 12px | line-height: 18px
-	 */
-	--font-size-text-xs: 12px;
-	--line-height-text-xs: 18px;
+  /**
+   * Text xs
+   * Uso: texto auxiliar.
+   * font-size: 12px | line-height: 18px
+   */
+  --font-size-text-xs: 12px;
+  --line-height-text-xs: 18px;
 }

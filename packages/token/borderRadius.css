@@ -1,67 +1,67 @@
 :root {
-	/**
-	 * radius-none
-	 * Sem arredondamento; raio zero.
-	 */
-	--radius-none: 0px;
+  /**
+   * radius-none
+   * Sem arredondamento; raio zero.
+   */
+  --radius-none: 0px;
 
-	/**
-	 * radius-xxs
-	 * Raio de 2px para cantos levemente arredondados.
-	 */
-	--radius-xxs: 2px;
+  /**
+   * radius-xxs
+   * Raio de 2px para cantos levemente arredondados.
+   */
+  --radius-xxs: 2px;
 
-	/**
-	 * radius-xs
-	 * Raio de 4px para cantos suavemente arredondados.
-	 */
-	--radius-xs: 4px;
+  /**
+   * radius-xs
+   * Raio de 4px para cantos suavemente arredondados.
+   */
+  --radius-xs: 4px;
 
-	/**
-	 * radius-sm
-	 * Raio de 6px para cantos arredondados padrão.
-	 */
-	--radius-sm: 6px;
+  /**
+   * radius-sm
+   * Raio de 6px para cantos arredondados padrão.
+   */
+  --radius-sm: 6px;
 
-	/**
-	 * radius-md
-	 * Raio de 8px para cantos arredondados moderados.
-	 */
-	--radius-md: 8px;
+  /**
+   * radius-md
+   * Raio de 8px para cantos arredondados moderados.
+   */
+  --radius-md: 8px;
 
-	/**
-	 * radius-lg
-	 * Raio de 10px para cantos arredondados grandes.
-	 */
-	--radius-lg: 10px;
+  /**
+   * radius-lg
+   * Raio de 10px para cantos arredondados grandes.
+   */
+  --radius-lg: 10px;
 
-	/**
-	 * radius-xl
-	 * Raio de 12px para cantos arredondados extra grandes.
-	 */
-	--radius-xl: 12px;
+  /**
+   * radius-xl
+   * Raio de 12px para cantos arredondados extra grandes.
+   */
+  --radius-xl: 12px;
 
-	/**
-	 * radius-2xl
-	 * Raio de 16px para cantos extra extra grandes.
-	 */
-	--radius-2xl: 16px;
+  /**
+   * radius-2xl
+   * Raio de 16px para cantos extra extra grandes.
+   */
+  --radius-2xl: 16px;
 
-	/**
-	 * radius-3xl
-	 * Raio de 20px para cantos ainda mais arredondados.
-	 */
-	--radius-3xl: 20px;
+  /**
+   * radius-3xl
+   * Raio de 20px para cantos ainda mais arredondados.
+   */
+  --radius-3xl: 20px;
 
-	/**
-	 * radius-4xl
-	 * Raio de 24px para bordas fortemente arredondadas.
-	 */
-	--radius-4xl: 24px;
+  /**
+   * radius-4xl
+   * Raio de 24px para bordas fortemente arredondadas.
+   */
+  --radius-4xl: 24px;
 
-	/**
-	 * radius-full
-	 * Raio máximo (9999px) para perfis totalmente circulares.
-	 */
-	--radius-full: 9999px;
+  /**
+   * radius-full
+   * Raio máximo (9999px) para perfis totalmente circulares.
+   */
+  --radius-full: 9999px;
 }

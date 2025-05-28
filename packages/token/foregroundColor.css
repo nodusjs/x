@@ -1,160 +1,160 @@
 :root {
-	/**
-	 * Cor de primeiro plano primária
-	 * Elementos de primeiro plano de maior contraste, como ícones.
-	 */
-	--fg-primary: light-dark(var(--color-gray-900), var(--color-base-white));
+  /**
+   * Cor de primeiro plano primária
+   * Elementos de primeiro plano de maior contraste, como ícones.
+   */
+  --fg-primary: light-dark(var(--color-gray-900), var(--color-base-white));
 
-	/**
-	 * Cor de primeiro plano secundária
-	 * Elementos de primeiro plano de alto contraste, como ícones.
-	 */
-	--fg-secondary: light-dark(var(--color-gray-700), var(--color-gray-300));
+  /**
+   * Cor de primeiro plano secundária
+   * Elementos de primeiro plano de alto contraste, como ícones.
+   */
+  --fg-secondary: light-dark(var(--color-gray-700), var(--color-gray-300));
 
-	/**
-	 * Cor de primeiro plano secundária (hover)
-	 * Elementos de primeiro plano secundário em estado de hover.
-	 */
-	--fg-secondary_hover: light-dark(var(--color-gray-800), var(--color-gray-200));
+  /**
+   * Cor de primeiro plano secundária (hover)
+   * Elementos de primeiro plano secundário em estado de hover.
+   */
+  --fg-secondary_hover: light-dark(var(--color-gray-800), var(--color-gray-200));
 
-	/**
-	 * Cor de primeiro plano terciária
-	 * Elementos de primeiro plano de contraste médio, como ícones.
-	 */
-	--fg-tertiary: light-dark(var(--color-gray-600), var(--color-gray-400));
+  /**
+   * Cor de primeiro plano terciária
+   * Elementos de primeiro plano de contraste médio, como ícones.
+   */
+  --fg-tertiary: light-dark(var(--color-gray-600), var(--color-gray-400));
 
-	/**
-	 * Cor de primeiro plano terciária (hover)
-	 * Elementos de primeiro plano terciário em estado de hover.
-	 */
-	--fg-tertiary_hover: light-dark(var(--color-gray-700), var(--color-gray-300));
+  /**
+   * Cor de primeiro plano terciária (hover)
+   * Elementos de primeiro plano terciário em estado de hover.
+   */
+  --fg-tertiary_hover: light-dark(var(--color-gray-700), var(--color-gray-300));
 
-	/**
-	 * Cor de primeiro plano quaternária
-	 * Elementos de primeiro plano de baixo contraste, como ícones em botões,
-	 * ícones de ajuda e ícones em campos de entrada.
-	 */
-	--fg-quaternary: light-dark(var(--color-gray-400), var(--color-gray-600));
+  /**
+   * Cor de primeiro plano quaternária
+   * Elementos de primeiro plano de baixo contraste, como ícones em botões,
+   * ícones de ajuda e ícones em campos de entrada.
+   */
+  --fg-quaternary: light-dark(var(--color-gray-400), var(--color-gray-600));
 
-	/**
-	 * Cor de primeiro plano quaternária (hover)
-	 * Elementos de primeiro plano quaternário em estado de hover.
-	 */
-	--fg-quaternary_hover: light-dark(
-		var(--color-gray-500),
-		var(--color-gray-500)
-	);
+  /**
+   * Cor de primeiro plano quaternária (hover)
+   * Elementos de primeiro plano quaternário em estado de hover.
+   */
+  --fg-quaternary_hover: light-dark(
+    var(--color-gray-500),
+    var(--color-gray-500)
+  );
 
-	/**
-	 * Cor de primeiro plano branca
-	 * Elementos de primeiro plano que são sempre brancos, independentemente do modo.
-	 */
-	--fg-white: light-dark(var(--color-base-white), var(--color-base-white));
+  /**
+   * Cor de primeiro plano branca
+   * Elementos de primeiro plano que são sempre brancos, independentemente do modo.
+   */
+  --fg-white: light-dark(var(--color-base-white), var(--color-base-white));
 
-	/**
-	 * Cor de primeiro plano desabilitado
-	 * Cor padrão para elementos de primeiro plano desabilitados, como ícones em
-	 * botões de grupo desabilitados e itens de menu suspenso de dropdown.
-	 */
-	--fg-disabled: light-dark(var(--color-gray-400), var(--color-gray-500));
+  /**
+   * Cor de primeiro plano desabilitado
+   * Cor padrão para elementos de primeiro plano desabilitados, como ícones em
+   * botões de grupo desabilitados e itens de menu suspenso de dropdown.
+   */
+  --fg-disabled: light-dark(var(--color-gray-400), var(--color-gray-500));
 
-	/**
-	 * Cor de primeiro plano desabilitado sutil
-	 * Variante de contraste mais baixo para elementos de primeiro plano desabilitados,
-	 * como ícones em checkboxes e tags de checkbox.
-	 */
-	--fg-disabled_subtle: light-dark(var(--color-gray-300), var(--color-gray-600));
+  /**
+   * Cor de primeiro plano desabilitado sutil
+   * Variante de contraste mais baixo para elementos de primeiro plano desabilitados,
+   * como ícones em checkboxes e tags de checkbox.
+   */
+  --fg-disabled_subtle: light-dark(var(--color-gray-300), var(--color-gray-600));
 
-	/**
-	 * Cor de primeiro plano da marca primária
-	 * Cor primária da marca para elementos de primeiro plano não textuais,
-	 * como ícones em destaque e barras de progresso.
-	 */
-	--fg-brand-primary: light-dark(var(--color-brand-600), var(--color-brand-500));
+  /**
+   * Cor de primeiro plano da marca primária
+   * Cor primária da marca para elementos de primeiro plano não textuais,
+   * como ícones em destaque e barras de progresso.
+   */
+  --fg-brand-primary: light-dark(var(--color-brand-600), var(--color-brand-500));
 
-	/**
-	 * Cor de primeiro plano da marca primária alternativa
-	 * Alternativa que muda para cinza no modo escuro, útil em elementos como
-	 * abas horizontais ativas.
-	 */
-	--fg-brand-primary_alt: light-dark(
-		var(--color-brand-600),
-		var(--color-gray-300)
-	);
+  /**
+   * Cor de primeiro plano da marca primária alternativa
+   * Alternativa que muda para cinza no modo escuro, útil em elementos como
+   * abas horizontais ativas.
+   */
+  --fg-brand-primary_alt: light-dark(
+    var(--color-brand-600),
+    var(--color-gray-300)
+  );
 
-	/**
-	 * Cor de primeiro plano da marca secundária
-	 * Cor secundária da marca para elementos de primeiro plano não textuais,
-	 * como acentos e setas em seções de marketing (ex. cabeçalhos hero).
-	 */
-	--fg-brand-secondary: light-dark(
-		var(--color-brand-500),
-		var(--color-brand-500)
-	);
+  /**
+   * Cor de primeiro plano da marca secundária
+   * Cor secundária da marca para elementos de primeiro plano não textuais,
+   * como acentos e setas em seções de marketing (ex. cabeçalhos hero).
+   */
+  --fg-brand-secondary: light-dark(
+    var(--color-brand-500),
+    var(--color-brand-500)
+  );
 
-	/**
-	 * Cor de primeiro plano da marca secundária alternativa
-	 * Alternativa que muda para cinza no modo escuro, útil em botões de marca.
-	 */
-	--fg-brand-secondary_alt: light-dark(
-		var(--color-brand-500),
-		var(--color-gray-600)
-	);
+  /**
+   * Cor de primeiro plano da marca secundária alternativa
+   * Alternativa que muda para cinza no modo escuro, útil em botões de marca.
+   */
+  --fg-brand-secondary_alt: light-dark(
+    var(--color-brand-500),
+    var(--color-gray-600)
+  );
 
-	/**
-	 * Cor de primeiro plano de erro primária
-	 * Cor semântica primária de erro para elementos de primeiro plano,
-	 * como ícones em destaque.
-	 */
-	--fg-error-primary: light-dark(var(--color-error-600), var(--color-error-500));
+  /**
+   * Cor de primeiro plano de erro primária
+   * Cor semântica primária de erro para elementos de primeiro plano,
+   * como ícones em destaque.
+   */
+  --fg-error-primary: light-dark(var(--color-error-600), var(--color-error-500));
 
-	/**
-	 * Cor de primeiro plano de erro secundária
-	 * Cor semântica secundária de erro para elementos de primeiro plano,
-	 * como ícones em campos de entrada em estado de erro e gráficos de métricas negativas.
-	 */
-	--fg-error-secondary: light-dark(
-		var(--color-error-500),
-		var(--color-error-400)
-	);
+  /**
+   * Cor de primeiro plano de erro secundária
+   * Cor semântica secundária de erro para elementos de primeiro plano,
+   * como ícones em campos de entrada em estado de erro e gráficos de métricas negativas.
+   */
+  --fg-error-secondary: light-dark(
+    var(--color-error-500),
+    var(--color-error-400)
+  );
 
-	/**
-	 * Cor de primeiro plano de aviso primária
-	 * Cor semântica primária de aviso para elementos de primeiro plano,
-	 * como ícones em destaque.
-	 */
-	--fg-warning-primary: light-dark(
-		var(--color-warning-600),
-		var(--color-warning-500)
-	);
+  /**
+   * Cor de primeiro plano de aviso primária
+   * Cor semântica primária de aviso para elementos de primeiro plano,
+   * como ícones em destaque.
+   */
+  --fg-warning-primary: light-dark(
+    var(--color-warning-600),
+    var(--color-warning-500)
+  );
 
-	/**
-	 * Cor de primeiro plano de aviso secundária
-	 * Cor semântica secundária de aviso para elementos de primeiro plano.
-	 */
-	--fg-warning-secondary: light-dark(
-		var(--color-warning-500),
-		var(--color-warning-400)
-	);
+  /**
+   * Cor de primeiro plano de aviso secundária
+   * Cor semântica secundária de aviso para elementos de primeiro plano.
+   */
+  --fg-warning-secondary: light-dark(
+    var(--color-warning-500),
+    var(--color-warning-400)
+  );
 
-	/**
-	 * Cor de primeiro plano de sucesso primária
-	 * Cor semântica primária de sucesso para elementos de primeiro plano,
-	 * como ícones em destaque.
-	 */
-	--fg-success-primary: light-dark(
-		var(--color-success-600),
-		var(--color-success-500)
-	);
+  /**
+   * Cor de primeiro plano de sucesso primária
+   * Cor semântica primária de sucesso para elementos de primeiro plano,
+   * como ícones em destaque.
+   */
+  --fg-success-primary: light-dark(
+    var(--color-success-600),
+    var(--color-success-500)
+  );
 
-	/**
-	 * Cor de primeiro plano de sucesso secundária
-	 * Cor semântica secundária de sucesso para elementos de primeiro plano,
-	 * como indicadores de status (ex. pontos de avatar online) e ícones em
-	 * gráficos de métricas.
-	 */
-	--fg-success-secondary: light-dark(
-		var(--color-success-500),
-		var(--color-success-400)
-	);
+  /**
+   * Cor de primeiro plano de sucesso secundária
+   * Cor semântica secundária de sucesso para elementos de primeiro plano,
+   * como indicadores de status (ex. pontos de avatar online) e ícones em
+   * gráficos de métricas.
+   */
+  --fg-success-secondary: light-dark(
+    var(--color-success-500),
+    var(--color-success-400)
+  );
 }

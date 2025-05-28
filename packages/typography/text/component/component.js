@@ -27,5 +27,4 @@ import { html } from "@nodusjs/std/dom";
  * console.log(container.innerHTML);
  * // "<span><slot></slot></span>"
  */
-export const component = (text) =>
-  html`<${text.as}><slot></slot></${text.as}>`;
+export const component = (text) => html`<${text.as}><slot></slot></${text.as}>`;

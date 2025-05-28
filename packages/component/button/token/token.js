@@ -1,7 +1,7 @@
 import { css } from "@nodusjs/std/dom";
 
 export const token = () =>
-	css`
+  css`
     :host {
       --button-background-color-brand-solid: var(--bg-brand-solid);
       --button-background-color-brand-outlined: var(--bg-primary);

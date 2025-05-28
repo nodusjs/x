@@ -36,14 +36,13 @@
  * console.log(e.somar(10)) // => 10
  * // logo em seguida (após o próximo tick): 'Somou: 10'
  */
-export const around = (method) =>
-  (_target, _propertyKey, descriptor) => {
-    const type = descriptor.set ? "set" : "value";
+export const around = (method) => (_target, _propertyKey, descriptor) => {
+  const type = descriptor.set ? "set" : "value";
 
-    descriptor[type] = new Proxy(descriptor[type], {
-      apply(original, context, args) {
-        setTimeout(() => context[method](...args))
-        return original.apply(context, args)
-      }
-    })
-  }
+  descriptor[type] = new Proxy(descriptor[type], {
+    apply(original, context, args) {
+      setTimeout(() => context[method](...args));
+      return original.apply(context, args);
+    },
+  });
+};

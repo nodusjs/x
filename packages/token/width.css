@@ -1,67 +1,67 @@
 :root {
-	/**
-	 * width-xxs
-	 * Largura extra-extra-pequena (320px) para contêineres muito estreitos.
-	 */
-	--width-xxs: 320px;
+  /**
+   * width-xxs
+   * Largura extra-extra-pequena (320px) para contêineres muito estreitos.
+   */
+  --width-xxs: 320px;
 
-	/**
-	 * width-xs
-	 * Largura extra-pequena (384px) para pontos de quebra pequenos.
-	 */
-	--width-xs: 384px;
+  /**
+   * width-xs
+   * Largura extra-pequena (384px) para pontos de quebra pequenos.
+   */
+  --width-xs: 384px;
 
-	/**
-	 * width-sm
-	 * Largura pequena (480px) para contêineres compactos.
-	 */
-	--width-sm: 480px;
+  /**
+   * width-sm
+   * Largura pequena (480px) para contêineres compactos.
+   */
+  --width-sm: 480px;
 
-	/**
-	 * width-md
-	 * Largura média (560px) para contêineres padrão.
-	 */
-	--width-md: 560px;
+  /**
+   * width-md
+   * Largura média (560px) para contêineres padrão.
+   */
+  --width-md: 560px;
 
-	/**
-	 * width-lg
-	 * Largura grande (640px) para contêineres amplos.
-	 */
-	--width-lg: 640px;
+  /**
+   * width-lg
+   * Largura grande (640px) para contêineres amplos.
+   */
+  --width-lg: 640px;
 
-	/**
-	 * width-xl
-	 * Largura extra-grande (768px) para layouts amplos.
-	 */
-	--width-xl: 768px;
+  /**
+   * width-xl
+   * Largura extra-grande (768px) para layouts amplos.
+   */
+  --width-xl: 768px;
 
-	/**
-	 * width-2xl
-	 * Largura 2× extra-grande (1024px) para seções de página.
-	 */
-	--width-2xl: 1024px;
+  /**
+   * width-2xl
+   * Largura 2× extra-grande (1024px) para seções de página.
+   */
+  --width-2xl: 1024px;
 
-	/**
-	 * width-3xl
-	 * Largura 3× extra-grande (1280px) para contêineres full-width em telas grandes.
-	 */
-	--width-3xl: 1280px;
+  /**
+   * width-3xl
+   * Largura 3× extra-grande (1280px) para contêineres full-width em telas grandes.
+   */
+  --width-3xl: 1280px;
 
-	/**
-	 * width-4xl
-	 * Largura 4× extra-grande (1440px) para layouts de maior escala.
-	 */
-	--width-4xl: 1440px;
+  /**
+   * width-4xl
+   * Largura 4× extra-grande (1440px) para layouts de maior escala.
+   */
+  --width-4xl: 1440px;
 
-	/**
-	 * width-5xl
-	 * Largura 5× extra-grande (1600px) para seções muito amplas.
-	 */
-	--width-5xl: 1600px;
+  /**
+   * width-5xl
+   * Largura 5× extra-grande (1600px) para seções muito amplas.
+   */
+  --width-5xl: 1600px;
 
-	/**
-	 * width-6xl
-	 * Largura 6× extra-grande (1920px) para larguras máximas em telas widescreen.
-	 */
-	--width-6xl: 1920px;
+  /**
+   * width-6xl
+   * Largura 6× extra-grande (1920px) para larguras máximas em telas widescreen.
+   */
+  --width-6xl: 1920px;
 }

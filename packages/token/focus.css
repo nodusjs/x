@@ -1,51 +1,53 @@
 :root {
-	/**
-	 * Focus ring
-	 * Indicador de foco simples (sem sombra) para elementos como toggles e checkboxes.
-	 * Cor da marca.
-	 */
-	--focus-ring: 0px 0px 0px 2px var(--bg-primary), 0px 0px 0px 4px var(--color-brand-500);
+  /**
+   * Focus ring
+   * Indicador de foco simples (sem sombra) para elementos como toggles e checkboxes.
+   * Cor da marca.
+   */
+  --focus-ring: 0px 0px 0px 2px var(--bg-primary), 0px 0px 0px 4px
+    var(--color-brand-500);
 
-	/**
-	 * Focus ring error
-	 * Indicador de foco simples em estado de erro.
-	 * Cor de erro.
-	 */
+  /**
+   * Focus ring error
+   * Indicador de foco simples em estado de erro.
+   * Cor de erro.
+   */
 
-	--focus-ring-error: 0px 0px 0px 2px var(--bg-primary), 0px 0px 0px 4px var(--color-error-500);
+  --focus-ring-error: 0px 0px 0px 2px var(--bg-primary), 0px 0px 0px 4px
+    var(--color-error-500);
 
-	/**
-	 * Focus ring + sombra XS
-	 * Indicador de foco combinado com sombra XS (elevação mínima).
-	 */
-	--focus-ring-shadow-xs: 0 0 0 1px var(--color-brand-500), var(--shadow-xs);
+  /**
+   * Focus ring + sombra XS
+   * Indicador de foco combinado com sombra XS (elevação mínima).
+   */
+  --focus-ring-shadow-xs: 0 0 0 1px var(--color-brand-500), var(--shadow-xs);
 
-	/**
-	 * Focus ring + sombra SM
-	 * Indicador de foco combinado com sombra SM (elevação sutil).
-	 */
-	--focus-ring-shadow-sm: 0 0 0 1px var(--color-brand-500), var(--shadow-sm);
+  /**
+   * Focus ring + sombra SM
+   * Indicador de foco combinado com sombra SM (elevação sutil).
+   */
+  --focus-ring-shadow-sm: 0 0 0 1px var(--color-brand-500), var(--shadow-sm);
 
-	/**
-	 * Focus ring error + sombra XS
-	 * Indicador de foco em erro combinado com sombra XS.
-	 */
-	--focus-ring-error-shadow-xs: 0 0 0 1px var(--color-error-500),
-		var(--shadow-xs);
+  /**
+   * Focus ring error + sombra XS
+   * Indicador de foco em erro combinado com sombra XS.
+   */
+  --focus-ring-error-shadow-xs: 0 0 0 1px var(--color-error-500),
+    var(--shadow-xs);
 
-	/**
-	 * Focus ring + sombra XS + inner shadow
-	 * Indicador de foco com sombra XS e uma sombra interna sutil para efeito
-	 * esquelético.
-	 */
-	--focus-ring-shadow-xs-skeuomorphic: 0 0 0 1px var(--color-brand-500),
-		var(--shadow-xs), var(--shadow-inner);
+  /**
+   * Focus ring + sombra XS + inner shadow
+   * Indicador de foco com sombra XS e uma sombra interna sutil para efeito
+   * esquelético.
+   */
+  --focus-ring-shadow-xs-skeuomorphic: 0 0 0 1px var(--color-brand-500),
+    var(--shadow-xs), var(--shadow-inner);
 
-	/**
-	 * Focus ring error + sombra XS + inner shadow
-	 * Indicador de foco em erro com sombra XS e sombra interna sutil para efeito
-	 * esquelético.
-	 */
-	--focus-ring-error-shadow-xs-skeuomorphic: 0 0 0 1px var(--color-error-500),
-		var(--shadow-xs), var(--shadow-inner);
+  /**
+   * Focus ring error + sombra XS + inner shadow
+   * Indicador de foco em erro com sombra XS e sombra interna sutil para efeito
+   * esquelético.
+   */
+  --focus-ring-error-shadow-xs-skeuomorphic: 0 0 0 1px var(--color-error-500),
+    var(--shadow-xs), var(--shadow-inner);
 }

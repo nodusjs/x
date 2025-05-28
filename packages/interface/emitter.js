@@ -45,4 +45,4 @@
  * btn.type = 'reset'
  * btn.click() // internals.form.reset()
  */
-export const emitter = Symbol('emitter')
+export const emitter = Symbol("emitter");

@@ -39,7 +39,7 @@ import { css } from "@nodusjs/std/dom";
  * // ":host { span { color: var(--text-error-primary_on-brand); display: inline-flex; ... } }"
  */
 export const style = (text) =>
-	css`
+  css`
     :host {
       ${text.as} {
         color: var(--text-${text.color}${text.onBrand ? "_on-brand" : ""});

@@ -42,4 +42,4 @@
  * el.hidden = true    // Oculta o componente
  * el.hidden = false   // Exibe o componente novamente
  */
-export const hideble = Symbol('hideble')
+export const hideble = Symbol("hideble");

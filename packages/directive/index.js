@@ -1,1 +1,1 @@
-import "./on"
+import "./on";

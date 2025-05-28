@@ -1,34 +1,38 @@
-import { describe, it, expect } from 'vitest'
-import { style } from './style.js'
+import { describe, expect, it } from "vitest";
+import { style } from "./style.js";
 
-describe('style', () => {
-  it('gera o CSS esperado com valores padrão', () => {
+describe("style", () => {
+  it("gera o CSS esperado com valores padrão", () => {
     const text = {
-      as:      'p',
-      color:   'primary',
+      as: "p",
+      color: "primary",
       onBrand: false,
-      size:    'md',
-      weight:  'medium',
-      align:   'left',
-      wrap:    'wrap'
-    }
+      size: "md",
+      weight: "medium",
+      align: "left",
+      wrap: "wrap",
+    };
 
-    const { cssRules: [{ cssText }]} = style(text)
-    expect(cssText).toMatchSnapshot()
-  })
+    const {
+      cssRules: [{ cssText }],
+    } = style(text);
+    expect(cssText).toMatchSnapshot();
+  });
 
-  it('gera o CSS esperado com valores customizados e on-brand', () => {
+  it("gera o CSS esperado com valores customizados e on-brand", () => {
     const text = {
-      as:      'p',
-      color:   'secondary',
+      as: "p",
+      color: "secondary",
       onBrand: true,
-      size:    'xl',
-      weight:  'bold',
-      align:   'center',
-      wrap:    'no-wrap'
-    }
+      size: "xl",
+      weight: "bold",
+      align: "center",
+      wrap: "no-wrap",
+    };
 
-    const { cssRules: [{ cssText }]} = style(text)
-    expect(cssText).toMatchSnapshot()
-  })
-})
+    const {
+      cssRules: [{ cssText }],
+    } = style(text);
+    expect(cssText).toMatchSnapshot();
+  });
+});

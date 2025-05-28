@@ -1,232 +1,232 @@
 :root {
-	/**
-	 * Fundo primário
-	 * Cor de fundo primária (branco) usada em todos os layouts e componentes.
-	 */
-	--bg-primary: light-dark(var(--color-base-white), var(--color-gray-950));
+  /**
+   * Fundo primário
+   * Cor de fundo primária (branco) usada em todos os layouts e componentes.
+   */
+  --bg-primary: light-dark(var(--color-base-white), var(--color-gray-950));
 
-	/**
-	 * Fundo primário alternativo
-	 * Cor de fundo primária alternativa (branco) que troca para bg-secondary no modo escuro.
-	 */
-	--bg-primary_alt: light-dark(var(--color-base-white), var(--color-gray-900));
+  /**
+   * Fundo primário alternativo
+   * Cor de fundo primária alternativa (branco) que troca para bg-secondary no modo escuro.
+   */
+  --bg-primary_alt: light-dark(var(--color-base-white), var(--color-gray-900));
 
-	/**
-	 * Fundo primário (hover)
-	 * Cor de fundo para estado hover em componentes com fundo branco (ex. itens de dropdown).
-	 */
-	--bg-primary_hover: light-dark(var(--color-gray-50), var(--color-gray-800));
+  /**
+   * Fundo primário (hover)
+   * Cor de fundo para estado hover em componentes com fundo branco (ex. itens de dropdown).
+   */
+  --bg-primary_hover: light-dark(var(--color-gray-50), var(--color-gray-800));
 
-	/**
-	 * Fundo primário sólido
-	 * Cor de fundo escura primária usada em layouts e componentes; no modo escuro alterna para bg-secondary.
-	 * Útil em tooltips e tooltips de editor de texto.
-	 */
-	--bg-primary-solid: light-dark(var(--color-gray-950), var(--color-gray-900));
+  /**
+   * Fundo primário sólido
+   * Cor de fundo escura primária usada em layouts e componentes; no modo escuro alterna para bg-secondary.
+   * Útil em tooltips e tooltips de editor de texto.
+   */
+  --bg-primary-solid: light-dark(var(--color-gray-950), var(--color-gray-900));
 
-	/**
-	 * Fundo secundário
-	 * Cor de fundo secundária usada para criar contraste contra fundos brancos (ex. seções de site).
-	 */
-	--bg-secondary: light-dark(var(--color-gray-50), var(--color-gray-900));
+  /**
+   * Fundo secundário
+   * Cor de fundo secundária usada para criar contraste contra fundos brancos (ex. seções de site).
+   */
+  --bg-secondary: light-dark(var(--color-gray-50), var(--color-gray-900));
 
-	/**
-	 * Fundo secundário alternativo
-	 * Cor de fundo secundária alternativa que troca para bg-primary no modo escuro.
-	 * Útil em abas horizontais de borda.
-	 */
-	--bg-secondary_alt: light-dark(var(--color-gray-50), var(--color-gray-950));
+  /**
+   * Fundo secundário alternativo
+   * Cor de fundo secundária alternativa que troca para bg-primary no modo escuro.
+   * Útil em abas horizontais de borda.
+   */
+  --bg-secondary_alt: light-dark(var(--color-gray-50), var(--color-gray-950));
 
-	/**
-	 * Fundo secundário (hover)
-	 * Cor de fundo para estado hover em componentes com fundo cinza-50 (ex. navegação, date-pickers).
-	 */
-	--bg-secondary_hover: light-dark(var(--color-gray-100), var(--color-gray-800));
+  /**
+   * Fundo secundário (hover)
+   * Cor de fundo para estado hover em componentes com fundo cinza-50 (ex. navegação, date-pickers).
+   */
+  --bg-secondary_hover: light-dark(var(--color-gray-100), var(--color-gray-800));
 
-	/**
-	 * Fundo secundário sutil
-	 * Variante mais clara e sutil em modo claro, útil em banners.
-	 */
-	--bg-secondary_subtle: light-dark(var(--color-gray-25), var(--color-gray-900));
+  /**
+   * Fundo secundário sutil
+   * Variante mais clara e sutil em modo claro, útil em banners.
+   */
+  --bg-secondary_subtle: light-dark(var(--color-gray-25), var(--color-gray-900));
 
-	/**
-	 * Fundo secundário sólido
-	 * Cor de fundo escura secundária usada em layouts e componentes;
-	 * útil em ícones em destaque.
-	 */
-	--bg-secondary-solid: light-dark(var(--color-gray-600), var(--color-gray-600));
+  /**
+   * Fundo secundário sólido
+   * Cor de fundo escura secundária usada em layouts e componentes;
+   * útil em ícones em destaque.
+   */
+  --bg-secondary-solid: light-dark(var(--color-gray-600), var(--color-gray-600));
 
-	/**
-	 * Fundo terciário
-	 * Cor de fundo terciária usada para criar contraste contra fundos claros (ex. toggles).
-	 */
-	--bg-tertiary: light-dark(var(--color-gray-100), var(--color-gray-800));
+  /**
+   * Fundo terciário
+   * Cor de fundo terciária usada para criar contraste contra fundos claros (ex. toggles).
+   */
+  --bg-tertiary: light-dark(var(--color-gray-100), var(--color-gray-800));
 
-	/**
-	 * Fundo quaternário
-	 * Cor de fundo quaternária usada para criar contraste contra fundos claros (ex. sliders, progress bars).
-	 */
-	--bg-quaternary: light-dark(var(--color-gray-200), var(--color-gray-700));
+  /**
+   * Fundo quaternário
+   * Cor de fundo quaternária usada para criar contraste contra fundos claros (ex. sliders, progress bars).
+   */
+  --bg-quaternary: light-dark(var(--color-gray-200), var(--color-gray-700));
 
-	/**
-	 * Fundo ativo
-	 * Cor de fundo padrão para estado ativo em componentes (ex. item selecionado em dropdown).
-	 */
-	--bg-active: light-dark(var(--color-gray-50), var(--color-gray-800));
+  /**
+   * Fundo ativo
+   * Cor de fundo padrão para estado ativo em componentes (ex. item selecionado em dropdown).
+   */
+  --bg-active: light-dark(var(--color-gray-50), var(--color-gray-800));
 
-	/**
-	 * Fundo desabilitado
-	 * Cor de fundo padrão para componentes desabilitados (ex. botões primários e toggles).
-	 */
-	--bg-disabled: light-dark(var(--color-gray-100), var(--color-gray-800));
+  /**
+   * Fundo desabilitado
+   * Cor de fundo padrão para componentes desabilitados (ex. botões primários e toggles).
+   */
+  --bg-disabled: light-dark(var(--color-gray-100), var(--color-gray-800));
 
-	/**
-	 * Fundo desabilitado sutil
-	 * Variante mais sutil para componentes desabilitados (ex. campos de formulário, checkboxes).
-	 */
-	--bg-disabled_subtle: light-dark(var(--color-gray-50), var(--color-gray-900));
+  /**
+   * Fundo desabilitado sutil
+   * Variante mais sutil para componentes desabilitados (ex. campos de formulário, checkboxes).
+   */
+  --bg-disabled_subtle: light-dark(var(--color-gray-50), var(--color-gray-900));
 
-	/**
-	 * Fundo overlay
-	 * Cor de fundo para overlays, útil em modals.
-	 */
-	--bg-overlay: light-dark(var(--color-gray-950), var(--color-gray-800));
+  /**
+   * Fundo overlay
+   * Cor de fundo para overlays, útil em modals.
+   */
+  --bg-overlay: light-dark(var(--color-gray-950), var(--color-gray-800));
 
-	/**
-	 * Fundo da marca primária
-	 * Cor de fundo primária da marca, útil em componentes como ícones de confirmação.
-	 */
-	--bg-brand-primary: light-dark(var(--color-brand-50), var(--color-brand-500));
+  /**
+   * Fundo da marca primária
+   * Cor de fundo primária da marca, útil em componentes como ícones de confirmação.
+   */
+  --bg-brand-primary: light-dark(var(--color-brand-50), var(--color-brand-500));
 
-	/**
-	 * Fundo da marca primária alternativo
-	 * Cor de fundo da marca que troca para bg-secondary no modo escuro (ex. abas horizontais ativas).
-	 */
-	--bg-brand-primary_alt: light-dark(
-		var(--color-brand-50),
-		var(--color-gray-800)
-	);
+  /**
+   * Fundo da marca primária alternativo
+   * Cor de fundo da marca que troca para bg-secondary no modo escuro (ex. abas horizontais ativas).
+   */
+  --bg-brand-primary_alt: light-dark(
+    var(--color-brand-50),
+    var(--color-gray-800)
+  );
 
-	/**
-	 * Fundo da marca secundária
-	 * Cor de fundo secundária da marca, útil em componentes como ícones em destaque.
-	 */
-	--bg-brand-secondary: light-dark(
-		var(--color-brand-100),
-		var(--color-brand-600)
-	);
+  /**
+   * Fundo da marca secundária
+   * Cor de fundo secundária da marca, útil em componentes como ícones em destaque.
+   */
+  --bg-brand-secondary: light-dark(
+    var(--color-brand-100),
+    var(--color-brand-600)
+  );
 
-	/**
-	 * Fundo sólido da marca
-	 * Cor sólida de fundo da marca usada em toggles e mensagens.
-	 */
-	--bg-brand-solid: light-dark(var(--color-brand-600), var(--color-brand-600));
+  /**
+   * Fundo sólido da marca
+   * Cor sólida de fundo da marca usada em toggles e mensagens.
+   */
+  --bg-brand-solid: light-dark(var(--color-brand-600), var(--color-brand-600));
 
-	/**
-	 * Fundo sólido da marca (hover)
-	 * Cor sólida de fundo da marca em estado hover, útil em toggles.
-	 */
-	--bg-brand-solid_hover: light-dark(
-		var(--color-brand-700),
-		var(--color-brand-500)
-	);
+  /**
+   * Fundo sólido da marca (hover)
+   * Cor sólida de fundo da marca em estado hover, útil em toggles.
+   */
+  --bg-brand-solid_hover: light-dark(
+    var(--color-brand-700),
+    var(--color-brand-500)
+  );
 
-	/**
-	 * Fundo de seção da marca
-	 * Cor de fundo padrão para seções de site (ex. CTAs, testimonials); no modo escuro alterna para bg-secondary.
-	 */
-	--bg-brand-section: light-dark(var(--color-brand-800), var(--color-gray-800));
+  /**
+   * Fundo de seção da marca
+   * Cor de fundo padrão para seções de site (ex. CTAs, testimonials); no modo escuro alterna para bg-secondary.
+   */
+  --bg-brand-section: light-dark(var(--color-brand-800), var(--color-gray-800));
 
-	/**
-	 * Fundo de seção da marca sutil
-	 * Variante sutil para seções de FAQ; no modo escuro alterna para bg-primary.
-	 */
-	--bg-brand-section_subtle: light-dark(
-		var(--color-brand-700),
-		var(--color-gray-950)
-	);
+  /**
+   * Fundo de seção da marca sutil
+   * Variante sutil para seções de FAQ; no modo escuro alterna para bg-primary.
+   */
+  --bg-brand-section_subtle: light-dark(
+    var(--color-brand-700),
+    var(--color-gray-950)
+  );
 
-	/**
-	 * Fundo de erro primário
-	 * Cor semântica primária de erro para componentes (ex. botões).
-	 */
-	--bg-error-primary: light-dark(var(--color-error-50), var(--color-error-950));
+  /**
+   * Fundo de erro primário
+   * Cor semântica primária de erro para componentes (ex. botões).
+   */
+  --bg-error-primary: light-dark(var(--color-error-50), var(--color-error-950));
 
-	/**
-	 * Fundo de erro secundário
-	 * Cor semântica secundária de erro, útil em ícones em destaque.
-	 */
-	--bg-error-secondary: light-dark(
-		var(--color-error-100),
-		var(--color-error-600)
-	);
+  /**
+   * Fundo de erro secundário
+   * Cor semântica secundária de erro, útil em ícones em destaque.
+   */
+  --bg-error-secondary: light-dark(
+    var(--color-error-100),
+    var(--color-error-600)
+  );
 
-	/**
-	 * Fundo sólido de erro
-	 * Cor sólida de fundo de erro usada em botões, ícones em destaque e metric items.
-	 */
-	--bg-error-solid: light-dark(var(--color-error-600), var(--color-error-600));
+  /**
+   * Fundo sólido de erro
+   * Cor sólida de fundo de erro usada em botões, ícones em destaque e metric items.
+   */
+  --bg-error-solid: light-dark(var(--color-error-600), var(--color-error-600));
 
-	/**
-	 * Fundo sólido de erro (hover)
-	 * Cor sólida de fundo de erro em estado hover, útil em botões.
-	 */
-	--bg-error-solid_hover: light-dark(
-		var(--color-error-700),
-		var(--color-error-500)
-	);
+  /**
+   * Fundo sólido de erro (hover)
+   * Cor sólida de fundo de erro em estado hover, útil em botões.
+   */
+  --bg-error-solid_hover: light-dark(
+    var(--color-error-700),
+    var(--color-error-500)
+  );
 
-	/**
-	 * Fundo de aviso primário
-	 * Cor semântica primária de aviso para componentes.
-	 */
-	--bg-warning-primary: light-dark(
-		var(--color-warning-50),
-		var(--color-warning-950)
-	);
+  /**
+   * Fundo de aviso primário
+   * Cor semântica primária de aviso para componentes.
+   */
+  --bg-warning-primary: light-dark(
+    var(--color-warning-50),
+    var(--color-warning-950)
+  );
 
-	/**
-	 * Fundo de aviso secundário
-	 * Cor semântica secundária de aviso, útil em ícones destacados.
-	 */
-	--bg-warning-secondary: light-dark(
-		var(--color-warning-100),
-		var(--color-warning-600)
-	);
+  /**
+   * Fundo de aviso secundário
+   * Cor semântica secundária de aviso, útil em ícones destacados.
+   */
+  --bg-warning-secondary: light-dark(
+    var(--color-warning-100),
+    var(--color-warning-600)
+  );
 
-	/**
-	 * Fundo sólido de aviso
-	 * Cor sólida de fundo de aviso usada em ícones em destaque.
-	 */
-	--bg-warning-solid: light-dark(
-		var(--color-warning-600),
-		var(--color-warning-600)
-	);
+  /**
+   * Fundo sólido de aviso
+   * Cor sólida de fundo de aviso usada em ícones em destaque.
+   */
+  --bg-warning-solid: light-dark(
+    var(--color-warning-600),
+    var(--color-warning-600)
+  );
 
-	/**
-	 * Fundo de sucesso primário
-	 * Cor semântica primária de sucesso para componentes.
-	 */
-	--bg-success-primary: light-dark(
-		var(--color-success-50),
-		var(--color-success-950)
-	);
+  /**
+   * Fundo de sucesso primário
+   * Cor semântica primária de sucesso para componentes.
+   */
+  --bg-success-primary: light-dark(
+    var(--color-success-50),
+    var(--color-success-950)
+  );
 
-	/**
-	 * Fundo de sucesso secundário
-	 * Cor semântica secundária de sucesso, útil em ícones em destaque.
-	 */
-	--bg-success-secondary: light-dark(
-		var(--color-success-100),
-		var(--color-success-600)
-	);
+  /**
+   * Fundo de sucesso secundário
+   * Cor semântica secundária de sucesso, útil em ícones em destaque.
+   */
+  --bg-success-secondary: light-dark(
+    var(--color-success-100),
+    var(--color-success-600)
+  );
 
-	/**
-	 * Fundo sólido de sucesso
-	 * Cor sólida de fundo de sucesso usada em ícones em destaque e metric items.
-	 */
-	--bg-success-solid: light-dark(
-		var(--color-success-600),
-		var(--color-success-600)
-	);
+  /**
+   * Fundo sólido de sucesso
+   * Cor sólida de fundo de sucesso usada em ícones em destaque e metric items.
+   */
+  --bg-success-solid: light-dark(
+    var(--color-success-600),
+    var(--color-success-600)
+  );
 }

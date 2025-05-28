@@ -1,1 +1,1 @@
-export { token } from './token'
+export { token } from "./token";

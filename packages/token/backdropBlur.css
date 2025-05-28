@@ -1,28 +1,28 @@
 :root {
-	/**
-	 * Backdrop blur SM
-	 * Desfoque leve de fundo para profundidade sutil em sobreposições.
-	 * Exemplo: pequenas cards ou menus.
-	 */
-	--backdrop-blur-sm: blur(4px);
+  /**
+   * Backdrop blur SM
+   * Desfoque leve de fundo para profundidade sutil em sobreposições.
+   * Exemplo: pequenas cards ou menus.
+   */
+  --backdrop-blur-sm: blur(4px);
 
-	/**
-	 * Backdrop blur MD
-	 * Desfoque moderado de fundo para elevação média em componentes.
-	 * Exemplo: painéis de diálogo leves.
-	 */
-	--backdrop-blur-md: blur(8px);
+  /**
+   * Backdrop blur MD
+   * Desfoque moderado de fundo para elevação média em componentes.
+   * Exemplo: painéis de diálogo leves.
+   */
+  --backdrop-blur-md: blur(8px);
 
-	/**
-	 * Backdrop blur LG
-	 * Desfoque intenso de fundo para destacar modais ou overlays grandes.
-	 */
-	--backdrop-blur-lg: blur(16px);
+  /**
+   * Backdrop blur LG
+   * Desfoque intenso de fundo para destacar modais ou overlays grandes.
+   */
+  --backdrop-blur-lg: blur(16px);
 
-	/**
-	 * Backdrop blur XL
-	 * Desfoque pesado de fundo para camadas de fundo fortemente desfocadas
-	 * em contextos de foco visual.
-	 */
-	--backdrop-blur-xl: blur(24px);
+  /**
+   * Backdrop blur XL
+   * Desfoque pesado de fundo para camadas de fundo fortemente desfocadas
+   * em contextos de foco visual.
+   */
+  --backdrop-blur-xl: blur(24px);
 }

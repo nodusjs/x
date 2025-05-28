@@ -1,22 +1,22 @@
 :root {
-	/**
-	 * container-padding-mobile
-	 * Espaçamento interno padrão para containers em dispositivos móveis.
-	 * Padding: 16px
-	 */
-	--container-padding-mobile: 16px;
+  /**
+   * container-padding-mobile
+   * Espaçamento interno padrão para containers em dispositivos móveis.
+   * Padding: 16px
+   */
+  --container-padding-mobile: 16px;
 
-	/**
-	 * container-padding-desktop
-	 * Espaçamento interno padrão para containers em desktop.
-	 * Padding: 32px
-	 */
-	--container-padding-desktop: 32px;
+  /**
+   * container-padding-desktop
+   * Espaçamento interno padrão para containers em desktop.
+   * Padding: 32px
+   */
+  --container-padding-desktop: 32px;
 
-	/**
-	 * container-max-width-desktop
-	 * Largura máxima dos containers em desktop para centralizar o conteúdo.
-	 * Max-width: 1280px
-	 */
-	--container-max-width-desktop: 1280px;
+  /**
+   * container-max-width-desktop
+   * Largura máxima dos containers em desktop para centralizar o conteúdo.
+   * Max-width: 1280px
+   */
+  --container-max-width-desktop: 1280px;
 }

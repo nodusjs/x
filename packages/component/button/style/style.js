@@ -1,11 +1,11 @@
 import { css } from "@nodusjs/std/dom";
 
 export const style = (button) =>
-	css`
+  css`
     :host {
       button {
         align-items: center;
-        aspect-ratio: ${button.onlyIcon ? '1/1' : 'auto'};
+        aspect-ratio: ${button.onlyIcon ? "1/1" : "auto"};
         background-color: var(--button-background-color-${button.color}-${button.variant});
         border: var(--button-border-${button.color}-${button.variant});
         border-radius: var(--radius-md);
@@ -20,7 +20,7 @@ export const style = (button) =>
         height: var(--button-height-${button.size});
         justify-content: center;
         line-height: 1;
-        padding: 0 ${button.onlyIcon ? 0 : 'var(--spacing-lg)'};
+        padding: 0 ${button.onlyIcon ? 0 : "var(--spacing-lg)"};
         transition: all 0.2s ease-out;
         width: ${button.onlyIcon ? `var(--button-width-${button.size})` : button.width};
 

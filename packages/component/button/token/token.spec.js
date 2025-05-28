@@ -1,9 +1,11 @@
-import { describe, it, expect } from 'vitest'
-import { token } from './token.js'
+import { describe, expect, it } from "vitest";
+import { token } from "./token.js";
 
-describe('token', () => {
-  it('gera o bloco de tokens CSS esperado', () => {
-    const { cssRules: [{ cssText }]} = token()
-    expect(cssText).toMatchSnapshot()
-  })
-})
+describe("token", () => {
+  it("gera o bloco de tokens CSS esperado", () => {
+    const {
+      cssRules: [{ cssText }],
+    } = token();
+    expect(cssText).toMatchSnapshot();
+  });
+});

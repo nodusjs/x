@@ -1,30 +1,34 @@
-import { describe, it, expect } from 'vitest'
-import { style } from './style.js'
+import { describe, expect, it } from "vitest";
+import { style } from "./style.js";
 
-describe('button style', () => {
-  it('gera o CSS esperado com valores padrão', () => {
+describe("button style", () => {
+  it("gera o CSS esperado com valores padrão", () => {
     const button = {
-      color: 'brand',
-      variant: 'solid',
-      size: 'md',
+      color: "brand",
+      variant: "solid",
+      size: "md",
       onlyIcon: false,
-      width: 'auto',
-    }
+      width: "auto",
+    };
 
-    const { cssRules: [{ cssText }]} = style(button)
-    expect(cssText).toMatchSnapshot()
-  })
+    const {
+      cssRules: [{ cssText }],
+    } = style(button);
+    expect(cssText).toMatchSnapshot();
+  });
 
-  it('gera o CSS esperado com valores customizados e onlyIcon', () => {
+  it("gera o CSS esperado com valores customizados e onlyIcon", () => {
     const button = {
-      color: 'error',
-      variant: 'ghost',
-      size: 'xl',
+      color: "error",
+      variant: "ghost",
+      size: "xl",
       onlyIcon: true,
-      width: '100px',
-    }
+      width: "100px",
+    };
 
-    const { cssRules: [{ cssText }]} = style(button)
-    expect(cssText).toMatchSnapshot()
-  })
-})
+    const {
+      cssRules: [{ cssText }],
+    } = style(button);
+    expect(cssText).toMatchSnapshot();
+  });
+});

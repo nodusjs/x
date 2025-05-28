@@ -1,7 +1,7 @@
+import { hideble } from "@interface";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 import { connectArc, disconnectArc } from "./interface";
-import { hideble } from "@interface";
 
 /**
  * `<x-on>` – diretiva declarativa para anexar fluxos de comandos a eventos do elemento pai.
@@ -42,7 +42,7 @@ class On extends Echo(HTMLElement) {
     (async () => {
       await customElements.whenDefined(this.parentElement?.localName);
       this.parentElement?.[disconnectArc]?.(this.#value);
-      this.parentElement?.[connectArc]?.(this.#value = value);
+      this.parentElement?.[connectArc]?.((this.#value = value));
     })();
   }
 

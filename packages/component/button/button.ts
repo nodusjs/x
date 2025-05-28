@@ -1,14 +1,14 @@
+import { disableable, emitter, hideble } from "@interface";
+import { around } from "@middleware";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import { paint, repaint } from "@nodusjs/std/dom";
+import Echo from "@nodusjs/std/echo";
+import on from "@nodusjs/std/event";
+import { truthy } from "@nodusjs/std/spark";
+import { stop } from "@spark";
 import { component } from "./component";
 import { style } from "./style";
 import { token } from "./token";
-import { truthy } from "@nodusjs/std/spark";
-import { disableable, emitter, hideble } from "@interface";
-import { around } from "@middleware";
-import Echo from "@nodusjs/std/echo";
-import on from "@nodusjs/std/event";
-import { stop } from "@spark";
 
 /**
  * `<x-button>` — componente de botão estilizado com suporte a formulários, estados e eventos.
@@ -18,9 +18,9 @@ import { stop } from "@spark";
  * @mixes Echo
  *
  * @description
- * Botão custom element que pode ser associado a formulários (form-associated), 
- * suportando estados `disabled`, `hidden`, variações de `color`, `size`, `variant`, 
- * largura (`width`) e ícone apenas (`only-icon`). Emite eventos de clique e aciona 
+ * Botão custom element que pode ser associado a formulários (form-associated),
+ * suportando estados `disabled`, `hidden`, variações de `color`, `size`, `variant`,
+ * largura (`width`) e ícone apenas (`only-icon`). Emite eventos de clique e aciona
  * ações de `submit` ou `reset` no formulário associado.
  *
  * @example
@@ -30,10 +30,10 @@ import { stop } from "@spark";
  * </x-button>
  *
  * <!-- Botão de erro apenas ícone, desabilitado -->
- * <x-button 
- *   color="error" 
- *   variant="ghost" 
- *   only-icon 
+ * <x-button
+ *   color="error"
+ *   variant="ghost"
+ *   only-icon
  *   disabled
  *   value="delete"
  * >
@@ -130,7 +130,7 @@ class Button extends Echo(HTMLElement) {
    * @returns {ElementInternals}
    */
   get internals() {
-    return this.#internals ??= this.attachInternals();
+    return (this.#internals ??= this.attachInternals());
   }
 
   /**
@@ -314,7 +314,7 @@ class Button extends Echo(HTMLElement) {
     this.disabled
       ? this.internals.states.add("disabled")
       : this.internals.states.delete("disabled");
-    return this
+    return this;
   }
 
   /**

@@ -1,1 +1,1 @@
-export { default } from './on'
+export { default } from "./on";

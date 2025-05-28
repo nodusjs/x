@@ -1,1 +1,1 @@
-export { before } from './before'
+export { before } from "./before";

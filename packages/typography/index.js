@@ -1,2 +1,2 @@
-import "./heading"
-import "./text"
+import "./heading";
+import "./text";

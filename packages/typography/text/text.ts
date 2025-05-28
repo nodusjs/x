@@ -1,9 +1,9 @@
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import { paint, repaint } from "@nodusjs/std/dom";
+import Echo from "@nodusjs/std/echo";
+import { truthy } from "@nodusjs/std/spark";
 import { component } from "./component";
 import { style } from "./style";
-import { truthy } from '@nodusjs/std/spark'
-import Echo from '@nodusjs/std/echo'
 
 /**
  * `<x-text>` — componente de texto estilizado conforme tokens do design system.
@@ -53,7 +53,7 @@ class Text extends Echo(HTMLElement) {
    * @param {'left'|'center'|'right'|'justify'} value
    * @returns {void}
    */
-  @attributeChanged('align')
+  @attributeChanged("align")
   @repaint
   set align(value) {
     this.#align = value;
@@ -74,7 +74,7 @@ class Text extends Echo(HTMLElement) {
    * @param {string} value Nome da tag
    * @returns {void}
    */
-  @attributeChanged('as')
+  @attributeChanged("as")
   @repaint
   set as(value) {
     this.#as = value;
@@ -95,7 +95,7 @@ class Text extends Echo(HTMLElement) {
    * @param {string} value Nome do token
    * @returns {void}
    */
-  @attributeChanged('color')
+  @attributeChanged("color")
   @repaint
   set color(value) {
     this.#color = value;
@@ -116,7 +116,7 @@ class Text extends Echo(HTMLElement) {
    * @param {boolean} value
    * @returns {void}
    */
-  @attributeChanged('on-brand', truthy)
+  @attributeChanged("on-brand", truthy)
   @repaint
   set onBrand(value) {
     this.#onBrand = value;
@@ -137,7 +137,7 @@ class Text extends Echo(HTMLElement) {
    * @param {'xs'|'sm'|'md'|'lg'|'xl'|'2xl'} value
    * @returns {void}
    */
-  @attributeChanged('size')
+  @attributeChanged("size")
   @repaint
   set size(value) {
     this.#size = value;
@@ -158,7 +158,7 @@ class Text extends Echo(HTMLElement) {
    * @param {'wrap'|'no-wrap'} value
    * @returns {void}
    */
-  @attributeChanged('wrap')
+  @attributeChanged("wrap")
   @repaint
   set wrap(value) {
     this.#wrap = value;
@@ -179,7 +179,7 @@ class Text extends Echo(HTMLElement) {
    * @param {'regular'|'medium'|'semibold'|'bold'} value
    * @returns {void}
    */
-  @attributeChanged('weight')
+  @attributeChanged("weight")
   @repaint
   set weight(value) {
     this.#weight = value;
