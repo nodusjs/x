@@ -7,12 +7,16 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
+		  "performance": {
+		    "noDelete": "off"
+		  },
 			"recommended": true,
 		  "style": {
 		    "noCommaOperator": "off"
 		  },
 			"suspicious": {
-				"noAssignInExpressions": "off"
+				"noAssignInExpressions": "off",
+				"noDuplicateTestHooks": "off"
 			}
 		}
 	},
