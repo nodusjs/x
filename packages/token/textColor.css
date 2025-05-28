@@ -155,6 +155,11 @@
 		var(--color-error-400)
 	);
 
+	--text-error-primary_hover: light-dark(
+		var(--color-error-700),
+		var(--color-error-300)
+	);
+
 	/**
 	 * Texto de aviso primário
 	 * Cor semântica padrão para texto em estado de aviso.
@@ -164,6 +169,11 @@
 		var(--color-warning-400)
 	);
 
+	--text-warning-primary_hover: light-dark(
+		var(--color-warning-700),
+		var(--color-warning-300)
+	);
+
 	/**
 	 * Texto de sucesso primário
 	 * Cor semântica padrão para texto em estado de sucesso.
@@ -171,5 +181,10 @@
 	--text-success-primary: light-dark(
 		var(--color-success-600),
 		var(--color-success-400)
+	);
+
+	--text-success-primary_hover: light-dark(
+		var(--color-success-700),
+		var(--color-success-300)
 	);
 }

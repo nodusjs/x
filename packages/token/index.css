@@ -4,10 +4,11 @@
 @import url("./borderRadius.css");
 @import url("./color.css");
 @import url("./container.css");
+@import url("./focus.css");
 @import url("./foregroundColor.css");
+@import url("./paragraph.css");
 @import url("./shadow.css");
 @import url("./spacing.css");
 @import url("./textColor.css");
 @import url("./typography.css");
 @import url("./width.css");
-@import url("./paragraph.css");

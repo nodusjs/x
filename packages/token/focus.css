@@ -4,14 +4,15 @@
 	 * Indicador de foco simples (sem sombra) para elementos como toggles e checkboxes.
 	 * Cor da marca.
 	 */
-	--focus-ring: 0 0 0 1px var(--color-brand-500);
+	--focus-ring: 0px 0px 0px 2px var(--bg-primary), 0px 0px 0px 4px var(--color-brand-500);
 
 	/**
 	 * Focus ring error
 	 * Indicador de foco simples em estado de erro.
 	 * Cor de erro.
 	 */
-	--focus-ring-error: 0 0 0 1px var(--color-error-500);
+
+	--focus-ring-error: 0px 0px 0px 2px var(--bg-primary), 0px 0px 0px 4px var(--color-error-500);
 
 	/**
 	 * Focus ring + sombra XS
