@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`component > deve gerar um slot para projeção de mensagens 1`] = `"<slot></slot>"`;

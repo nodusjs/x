@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`style > gera o bloco de styles CSS esperado 1`] = `":host { color: var(--text-error-primary); display: none; font-family: var(--font-family-base); font-size: var(--font-size-text-sm); font-weight: var(--font-weight-regular); line-height: var(--line-height-text-sm); }"`;

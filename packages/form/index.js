@@ -1,1 +1,3 @@
-import "./textField";
+import "./input";
+import "./label";
+import "./validity";
