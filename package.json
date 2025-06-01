@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@nodusjs/std": "0.17.2"
+    "@nodusjs/std": "0.17.8"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
@@ -30,7 +30,7 @@
     "prepare": "husky",
     "test": "vitest --coverage"
   },
-  "source": "src/index.js",
+  "source": "index.js",
   "styles": "dist/x.css",
   "type": "module",
   "version": "0.5.0"
