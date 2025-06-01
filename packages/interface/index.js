@@ -5,5 +5,7 @@ export { hideble } from "./hideble";
 export { isPainted } from "./isPainted";
 export { reflactable } from "./reflactable";
 export { reportable } from "./reportable";
+export { resettable } from "./resettable";
 export { slotable } from "./slotable";
+export { submittable } from "./submittable";
 export { validable } from "./validable";
