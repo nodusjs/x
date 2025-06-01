@@ -192,7 +192,7 @@ class Text extends Echo(HTMLElement) {
    */
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: "open", delegatesFocus: true });
   }
 }
 
