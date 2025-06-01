@@ -22,6 +22,7 @@ import { truthy } from "@nodusjs/std/spark";
 import { prevent, value } from "@spark";
 import { component } from "./component";
 import Element from "./element";
+import { invalid } from "./invalid";
 import { style } from "./style";
 
 /**
@@ -553,7 +554,7 @@ class Input extends Echo(HTMLElement) {
    *
    * @returns {this}
    */
-  @on.invalid("*", prevent)
+  @invalid(prevent)
   [validable]() {
     this.validity.valid
       ? this.internals.states.delete("invalid")

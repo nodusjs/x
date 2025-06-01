@@ -1,9 +1,11 @@
-import { attributeChanged, define } from "@nodusjs/std";
+import { resettable, submittable } from "@interface";
+import { attributeChanged, define } from "@nodusjs/std/directive";
 import { paint } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import on from "@nodusjs/std/event";
-import component from "./component";
-import style from "./style";
+import { formData, prevent, stop } from "@spark";
+import { component } from "./component";
+import { style } from "./style";
 
 @define("x-form")
 @paint(component, style)
@@ -11,14 +13,12 @@ class Form extends Echo(HTMLElement) {
   #template;
 
   get template() {
-    return this.#template
-      ? document.querySelector(`#${this.#template}`)
-      : this.shadowRoot.querySelector("template");
+    return (this.#template ??= this.querySelector("template")).innerHTML;
   }
 
   @attributeChanged("template")
   set template(value) {
-    this.#template = value;
+    this.#template = document.querySelector(`#${value}`);
   }
 
   constructor() {
@@ -34,9 +34,9 @@ class Form extends Echo(HTMLElement) {
   }
 
   @on.reset("form")
-  [reseted]() {
+  [resettable]() {
     const init = { bubbles: true, cancelable: true };
-    const event = new CustomEvent("reseted", init);
+    const event = new CustomEvent("reset", init);
     this.dispatchEvent(event);
     return this;
   }
@@ -49,9 +49,9 @@ class Form extends Echo(HTMLElement) {
   }
 
   @on.submit("form", prevent, formData)
-  [submitted](data) {
+  [submittable](data) {
     const init = { bubbles: true, cancelable: true, detail: data };
-    const event = new CustomEvent("submitted", init);
+    const event = new CustomEvent("submit", init);
     this.dispatchEvent(event);
     return this;
   }
