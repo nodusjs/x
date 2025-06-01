@@ -47,7 +47,7 @@ const element = {
 
       // valores diretos (como `value`) atribuídos ao elemento
       if (/^(value)$/i.test(key)) {
-        input.shadowRoot.querySelector("input")[key] = value;
+        input.shadowRoot.querySelector("input")[key] = value || "";
         return this;
       }
 

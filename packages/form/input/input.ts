@@ -1,7 +1,6 @@
 import {
   bindable,
   disableable,
-  emitter,
   hideble,
   reflactable,
   reportable,
@@ -466,9 +465,9 @@ class Input extends Echo(HTMLElement) {
    * @returns {this}
    */
   @on.input("input", value)
-  @after(emitter)
-  [bindable](val) {
-    this.value = val;
+  [bindable](detail) {
+    this.value = detail;
+    this.dispatchEvent(new CustomEvent("change", { detail }));
     return this;
   }
 
@@ -490,16 +489,6 @@ class Input extends Echo(HTMLElement) {
     this.disabled
       ? this.internals.states.add("disabled")
       : this.internals.states.delete("disabled");
-    return this;
-  }
-
-  /**
-   * Dispara um evento `change` customizado com o valor atual do campo.
-   *
-   * @returns {this}
-   */
-  [emitter]() {
-    this.dispatchEvent(new CustomEvent("change", { detail: this.value }));
     return this;
   }
 
@@ -546,6 +535,7 @@ class Input extends Echo(HTMLElement) {
   reset() {
     this.element.value = "";
     this.internals.states.delete("invalid");
+    this.dispatchEvent(new Event("reset"));
     return this;
   }
 

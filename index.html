@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <x-form>
+    <template>
+      <x-input name="cep" required>
+        <x-label>CEP</x-label>
+        <x-validity state="valueMissing">CEP eh obrigatorio</x-validity>
+      </x-input>
+
+      <x-input name="estado" readonly>
+        <x-label>Estado</x-label>
+        <x-on value="api/ok:attribute/value|prop=estado"></x-on>
+        <x-on value="api/error:method/reset"></x-on>
+      </x-input>
+
+      <x-input name="cidade" readonly>
+        <x-label>Cidade</x-label>
+        <x-on value="api/ok:attribute/value|prop=localidade"></x-on>
+        <x-on value="api/error:method/reset"></x-on>
+      </x-input>
+
+      <x-input name="bairro" readonly>
+        <x-label>Bairro</x-label>
+        <x-on value="api/ok:attribute/value|prop=bairro"></x-on>
+        <x-on value="api/error:method/reset"></x-on>
+      </x-input>
+
+      <x-input name="rua" readonly>
+        <x-label>Rua</x-label>
+        <x-on value="api/ok:attribute/value|prop=logradouro"></x-on>
+        <x-on value="api/error:method/reset"></x-on>
+      </x-input>
+
+      <x-input name="complemento">
+        <x-label>Complemento</x-label>
+        <x-on value="api/error:method/reset"></x-on>
+      </x-input>
+
+      <x-button type="submit">Submit</x-button>
+      <x-button type="reset">Reset</x-button>
+    </template>
+  </x-form>
+
+  <x-fetch name="api" url="https://viacep.com.br/ws/{}/json">
+    <x-on value="cep/change:method/get"></x-on>
+  </x-fetch>
+
+  <script src="./index.js" type="module"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-import { reflactable, slotable, validable } from "@interface";
+import { reflactable, resettable, slotable, validable } from "@interface";
 import {
   attributeChanged,
   connected,
@@ -69,6 +69,15 @@ class Validity extends Echo(HTMLElement) {
       });
     }
 
+    this.parentElement.addEventListener("reset", this[resettable].bind(this), {
+      signal: this.controller.signal,
+    });
+
+    return this;
+  }
+
+  [resettable]() {
+    this.internals.states.delete("invalid");
     return this;
   }
 }
