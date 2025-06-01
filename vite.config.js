@@ -27,6 +27,7 @@ export default defineConfig({
     alias: {
       "@component": resolve(__dirname, "packages/component"),
       "@directive": resolve(__dirname, "packages/directive"),
+      "@form": resolve(__dirname, "packages/form"),
       "@interface": resolve(__dirname, "packages/interface"),
       "@layout": resolve(__dirname, "packages/layout"),
       "@middleware": resolve(__dirname, "packages/middleware"),
