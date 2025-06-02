@@ -24,8 +24,12 @@ const http = new Proxy(
 
           json() {
             return fetch(url, init)
-              .then((response) => response.json())
-              .then((data) => ({ data, error: null }))
+              .then(async (response) => {
+                const json = await response.json();
+                return response.ok
+                  ? { data: json, error: null }
+                  : { data: null, error: json };
+              })
               .catch((error) => ({ data: null, error }));
           },
 

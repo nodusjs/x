@@ -40,9 +40,9 @@ class Fetch extends Echo(HTMLElement) {
 
   async [emitter](response) {
     const { data, error } = await response;
-    data
-      ? this.dispatchEvent(new CustomEvent("ok", { detail: data }))
-      : this.dispatchEvent(new CustomEvent("error", { detail: error }));
+    error
+      ? this.dispatchEvent(new CustomEvent("error", { detail: data }))
+      : this.dispatchEvent(new CustomEvent("ok", { detail: data }));
     return this;
   }
 
