@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    :not(:defined) {
+      visibility: hidden;
+    }
+
+    body {
+      color-scheme: light dark;
+      background-color: light-dark(#FCFCFD, #0C111D);
+      transition: all 0.2s ease-out;
+    }
+  </style>
 </head>
 <body>
   <x-form>
@@ -42,8 +53,7 @@
         <x-on value="api/error:method/reset"></x-on>
       </x-input>
 
-      <x-button type="submit">Submit</x-button>
-      <x-button type="reset">Reset</x-button>
+      <x-button type="submit" width="100%">Submit</x-button>
     </template>
   </x-form>
 
