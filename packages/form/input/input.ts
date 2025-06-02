@@ -534,6 +534,7 @@ class Input extends Echo(HTMLElement) {
   @after(reflactable)
   reset() {
     this.element.value = "";
+    this.removeAttribute("value");
     this.internals.states.delete("invalid");
     this.dispatchEvent(new Event("reset"));
     return this;
