@@ -1,9 +1,9 @@
+import { interpolate } from "@directive/render/interpolate";
 import { emitter, hideble } from "@interface";
 import { after, before } from "@middleware";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 import http from "./http";
-import { interpolate } from "./interpolate";
 
 @define("x-fetch")
 class Fetch extends Echo(HTMLElement) {

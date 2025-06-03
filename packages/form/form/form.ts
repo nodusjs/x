@@ -13,12 +13,12 @@ class Form extends Echo(HTMLElement) {
   #template;
 
   get template() {
-    return (this.#template ??= this.querySelector("template")).innerHTML;
+    return (this.#template ??= this.querySelector("template").innerHTML);
   }
 
   @attributeChanged("template")
   set template(value) {
-    this.#template = document.querySelector(`#${value}`);
+    this.#template = document.querySelector(`#${value}`).innerHTML;
   }
 
   constructor() {

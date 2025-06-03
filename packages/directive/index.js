@@ -1,1 +1,2 @@
 import "./on";
+import "./render";
