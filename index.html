@@ -17,50 +17,21 @@
   </style>
 </head>
 <body>
-  <x-form>
+  <x-input name="raca">
+    <x-label>Raca de cachorro</x-label>
+  </x-input>
+
+  <x-render>
     <template>
-      <x-input name="cep" required>
-        <x-label>CEP</x-label>
-        <x-validity state="valueMissing">CEP eh obrigatorio</x-validity>
-      </x-input>
-
-      <x-input name="estado" readonly>
-        <x-label>Estado</x-label>
-        <x-on value="api/ok:attribute/value|prop=estado"></x-on>
-        <x-on value="api/error:method/reset"></x-on>
-      </x-input>
-
-      <x-input name="cidade" readonly>
-        <x-label>Cidade</x-label>
-        <x-on value="api/ok:attribute/value|prop=localidade"></x-on>
-        <x-on value="api/error:method/reset"></x-on>
-      </x-input>
-
-      <x-input name="bairro" readonly>
-        <x-label>Bairro</x-label>
-        <x-on value="api/ok:attribute/value|prop=bairro"></x-on>
-        <x-on value="api/error:method/reset"></x-on>
-      </x-input>
-
-      <x-input name="rua" readonly>
-        <x-label>Rua</x-label>
-        <x-on value="api/ok:attribute/value|prop=logradouro"></x-on>
-        <x-on value="api/error:method/reset"></x-on>
-      </x-input>
-
-      <x-input name="complemento">
-        <x-label>Complemento</x-label>
-        <x-on value="api/error:method/reset"></x-on>
-      </x-input>
-
-      <x-button type="submit" width="100%">Submit</x-button>
+      <x-text>{name}</x-text><br />
     </template>
-  </x-form>
+    <x-on value="api/ok:method/render"></x-on>
+  </x-render>
 
-  <x-fetch name="api" url="https://viacep.com.br/ws/{}/json">
-    <x-on value="cep/change:method/get"></x-on>
+  <x-fetch name="api" url="https://api.thedogapi.com/v1/breeds/search?q={}">
+    <x-on value="raca/change:method/get"></x-on>
   </x-fetch>
 
-  <script src="./index.js" type="module"></script>
+  <script src="./index.js" type="module"></script> 
 </body>
 </html>
