@@ -296,7 +296,7 @@ class Button extends Echo(HTMLElement) {
    *
    * @returns {this}
    */
-  @on.click(":host *", stop)
+  @on.click("*", stop)
   @around(emitter)
   click() {
     const init = { bubbles: true, cancelable: true, detail: this.value };
