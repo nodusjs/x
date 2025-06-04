@@ -565,7 +565,7 @@ class Input extends Echo(HTMLElement) {
     const listener = (event) =>
       this.disabled || event.formData.set(this.name, this.value);
     const options = { signal: this.controller.signal };
-    form.addEventListener(event, listener, options);
+    form?.addEventListener?.(event, listener, options);
     return this;
   }
 

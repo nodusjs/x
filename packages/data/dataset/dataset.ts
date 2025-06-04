@@ -1,5 +1,5 @@
 import { emitter, hideble } from "@interface";
-import { after } from "@middleware";
+import { around } from "@middleware";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 import { uuid } from "./uuid";
@@ -22,7 +22,7 @@ class Dataset extends Echo(HTMLElement) {
     return [...this.#map.values()];
   }
 
-  @after(emitter)
+  @around(emitter)
   delete(key) {
     this.#map.delete(key);
     return this;
@@ -41,7 +41,7 @@ class Dataset extends Echo(HTMLElement) {
     return this;
   }
 
-  @after(emitter)
+  @around(emitter)
   push(payload) {
     const key = payload[this.upsert] ?? uuid();
     const value = this.#map.get(key) ?? {};
@@ -49,7 +49,7 @@ class Dataset extends Echo(HTMLElement) {
     return this;
   }
 
-  @after(emitter)
+  @around(emitter)
   reset() {
     this.#map.clear();
     return this;
