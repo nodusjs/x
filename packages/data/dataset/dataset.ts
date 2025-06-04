@@ -1,6 +1,6 @@
 import { emitter, hideble } from "@interface";
 import { after } from "@middleware";
-import { attributeChanged, define } from "@nodusjs/std/directive";
+import { attributeChanged, connected, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 import { uuid } from "./uuid";
 
