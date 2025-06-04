@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@nodusjs/std": "0.17.9"
+    "@nodusjs/std": "0.17.10"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
@@ -33,5 +33,5 @@
   "source": "index.js",
   "styles": "dist/x.css",
   "type": "module",
-  "version": "0.9.3"
+  "version": "0.10.0"
 }
