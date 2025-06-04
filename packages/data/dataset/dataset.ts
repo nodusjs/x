@@ -45,7 +45,7 @@ class Dataset extends Echo(HTMLElement) {
   push(payload) {
     const key = payload[this.upsert] ?? uuid();
     const value = this.#map.get(key) ?? {};
-    this.#map.set(key, { ...value, payload });
+    this.#map.set(key, { ...value, payload, [this.upsert]: key });
     return this;
   }
 
