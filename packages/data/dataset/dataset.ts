@@ -29,7 +29,7 @@ class Dataset extends Echo(HTMLElement) {
   }
 
   [emitter]() {
-    const init = { detail: this.value };
+    const init = { bubbles: true, cancelable: true, detail: this.value };
     const event = new CustomEvent("change", init);
     this.dispatchEvent(event);
     return this;
@@ -45,7 +45,7 @@ class Dataset extends Echo(HTMLElement) {
   push(payload) {
     const key = payload[this.upsert] ?? uuid();
     const value = this.#map.get(key) ?? {};
-    this.#map.set(key, { ...value, payload, [this.upsert]: key });
+    this.#map.set(key, { ...value, ...payload, [this.upsert]: key });
     return this;
   }
 
