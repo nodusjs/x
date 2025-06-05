@@ -17,21 +17,74 @@
   </style>
 </head>
 <body>
-  <x-input name="raca">
-    <x-label>Raca de cachorro</x-label>
-  </x-input>
+  <x-form name="user">
+    <template>
+      <x-input name="name" required>
+        <x-label>User</x-label>
+        <x-validity state="valueMissing">Name is required</x-validity>
+      </x-input>
+      <x-input name="age" required>
+        <x-label>Age</x-label>
+        <x-validity state="valueMissing">Age is required</x-validity>
+      </x-input>
+      <x-button>Submit</x-button>
+    </template>
+    <x-on value="user/submit:method/reset"></x-on>
+  </x-form>
 
   <x-render>
     <template>
-      <x-text>{name}</x-text><br />
+      <div>
+        <x-text>{name} - {age}</x-text>
+        <x-button name="edit" value="{id}">Edit</x-button>
+        <x-button name="delete" value="{id}" color="error">Delete</x-button>
+      </div>
     </template>
-    <x-on value="api/ok:method/render"></x-on>
+    <x-on value="users/change:method/render"></x-on>
   </x-render>
 
-  <x-fetch name="api" url="https://api.thedogapi.com/v1/breeds/search?q={}">
-    <x-on value="raca/change:method/get"></x-on>
-  </x-fetch>
+  <x-render>
+    <template>
+      <x-form name="update">
+        <template>
+          <x-input name="id" value="{id}" hidden></x-input>
+          <x-input name="name" value="{name}" required>
+            <x-label>User</x-label>
+            <x-validity state="valueMissing">Name is required</x-validity>
+          </x-input>
+          <x-input name="age" value="{age}" required>
+            <x-label>Age</x-label>
+            <x-validity state="valueMissing">Age is required</x-validity>
+          </x-input>
+          <x-button>Save</x-button>
+        </template>
+        <x-on value="update/submit:method/reset"></x-on>
+      </x-form>
+    </template>
+    <x-on value="users/find:method/render"></x-on>
+  </x-render>
+
+  <x-dataset name="users" upsert="id">
+    <x-find key="id">
+      <x-on value="edit/click:attribute/value"></x-on>
+    </x-find>
+    <x-on value="user/submit:method/push"></x-on>
+    <x-on value="update/submit:method/push"></x-on>
+    <x-on value="delete/click:method/delete"></x-on>
+  </x-dataset>
+
+
+  <x-button name="save" disabled>
+    Salvar
+    <x-on value="users/change:attribute/disabled|len|equals=0"></x-on>
+    <x-on value="users/change:setter/value"></x-on>
+  </x-button>
 
   <script src="./index.js" type="module"></script> 
+  <script>
+    document
+      .querySelector('x-button[name="save"]')
+      .addEventListener('click', (e) => alert(JSON.stringify(e.detail)))
+  </script>
 </body>
 </html>
