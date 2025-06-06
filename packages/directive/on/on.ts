@@ -42,7 +42,7 @@ class On extends Echo(HTMLElement) {
   @attributeChanged("value")
   @around(reportable)
   set value(value) {
-    this.#oldValue = this.newValue;
+    this.#oldValue = this.#newValue;
     this.#newValue = value;
   }
 

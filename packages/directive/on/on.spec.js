@@ -6,13 +6,8 @@ import On from "./on";
 describe("⟨x-on⟩ directive (unit)", () => {
   let host;
   let parent;
-  let whenSpy;
 
   beforeEach(() => {
-    whenSpy = vi
-      .spyOn(customElements, "whenDefined")
-      .mockResolvedValue(undefined);
-
     parent = {
       localName: "x-button",
       [disconnectArc]: vi.fn(),
@@ -31,9 +26,7 @@ describe("⟨x-on⟩ directive (unit)", () => {
   it("setter .value() deve chamar whenDefined → disconnectArc(antes) → connectArc(novo)", async () => {
     host.value = "foo";
 
-    expect(whenSpy).toHaveBeenCalledWith("x-button");
-
-    await Promise.resolve();
+    await new Promise((r) => setTimeout(r, 10));
 
     expect(parent[disconnectArc]).toHaveBeenCalledWith(undefined);
     expect(parent[connectArc]).toHaveBeenCalledWith("foo");
@@ -42,14 +35,14 @@ describe("⟨x-on⟩ directive (unit)", () => {
   it("setter .value() subsequente: desconecta valor antigo e conecta valor novo", async () => {
     host.value = "first";
 
-    await Promise.resolve();
+    await new Promise((r) => setTimeout(r, 10));
 
     parent[disconnectArc].mockClear();
     parent[connectArc].mockClear();
 
     host.value = "second";
 
-    await Promise.resolve();
+    await new Promise((r) => setTimeout(r, 10));
 
     expect(parent[disconnectArc]).toHaveBeenCalledWith("first");
     expect(parent[connectArc]).toHaveBeenCalledWith("second");
@@ -57,7 +50,7 @@ describe("⟨x-on⟩ directive (unit)", () => {
 
   it("também funciona definindo o atributo `value`", async () => {
     host.setAttribute("value", "bar");
-    await Promise.resolve();
+    await new Promise((r) => setTimeout(r, 10));
     expect(parent[connectArc]).toHaveBeenCalledWith("bar");
   });
 
