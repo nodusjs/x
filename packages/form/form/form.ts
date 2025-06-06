@@ -13,7 +13,14 @@ class Form extends Echo(HTMLElement) {
   #template;
 
   get template() {
-    return (this.#template ??= this.querySelector("template").innerHTML);
+    const { innerHTML, children } = (this.#template ??=
+      this.querySelector("template"));
+    return (
+      innerHTML ||
+      Array.from(children)
+        .map((c) => c.outerHTML)
+        .join("")
+    );
   }
 
   @attributeChanged("template")

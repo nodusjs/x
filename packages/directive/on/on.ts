@@ -1,4 +1,5 @@
-import { hideble } from "@interface";
+import { hideble, reportable } from "@interface";
+import { around } from "@middleware";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 import { connectArc, disconnectArc } from "./interface";
@@ -29,7 +30,8 @@ import { connectArc, disconnectArc } from "./interface";
  */
 @define("x-on")
 class On extends Echo(HTMLElement) {
-  #value;
+  #oldValue;
+  #newValue;
 
   /**
    * Atualiza o “arco” de comando para o evento e instruções especificados.
@@ -38,12 +40,17 @@ class On extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("value")
+  @around(reportable)
   set value(value) {
-    (async () => {
-      await customElements.whenDefined(this.parentElement?.localName);
-      this.parentElement?.[disconnectArc]?.(this.#value);
-      this.parentElement?.[connectArc]?.((this.#value = value));
-    })();
+    this.#oldValue = this.newValue;
+    this.#newValue = value;
+  }
+
+  @connected
+  async [reportable]() {
+    this.parentElement?.[disconnectArc]?.(this.#oldValue);
+    this.parentElement?.[connectArc]?.(this.#newValue);
+    return this;
   }
 
   /**
