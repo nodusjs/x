@@ -38,9 +38,9 @@ https://www.jsdelivr.com/package/npm/@nodusjs/x
 
 ## Scripts
 
-- `npm run dev` inicia o servidor de desenvolvimento
-- `npm run build` gera os arquivos de distribuição
-- `npm test` executa a suíte de testes
+- `bun dev` inicia o servidor de desenvolvimento
+- `bun run build` gera os arquivos de distribuição
+- `bun run test` executa a suíte de testes
 
 ## Contribuindo
 
