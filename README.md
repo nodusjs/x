@@ -2,7 +2,7 @@
 
 @nodus/x é uma biblioteca de componentes web baseada em **dataflow**. Cada componente propaga dados automaticamente para os demais, permitindo criar fluxos declarativos sem a necessidade de gerenciar estado como fazemos em React, Vue ou Angular. Você pode montar interfaces completas sem escrever nenhuma linha de JavaScript: basta combinar os elementos do Nodus e o fluxo cuidará das atualizações.
 
->⚠️  Este projeto ainda está em desenvolvimento ativo e as APIs podem mudar.
+> ⚠️  Este projeto ainda está em desenvolvimento ativo e as APIs podem mudar.
 
 ## Instalação
 
