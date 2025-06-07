@@ -28,7 +28,7 @@ Se preferir, carregue o CSS da própria biblioteca:
 import "@nodusjs/x/dist/x.css";
 ```
 
-### Uso via CDN
+### CDN
 
 Para testar ou prototipar rapidamente, utilize os arquivos hospedados em uma CDN:
 
