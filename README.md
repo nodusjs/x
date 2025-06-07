@@ -11,6 +11,8 @@
 ```bash
 npm install @nodusjs/x
 # ou
+yarn add @nodusjs/x
+# ou
 bun add @nodusjs/x
 ```
 
@@ -30,42 +32,8 @@ import "@nodusjs/x/dist/x.css";
 
 Para testar ou prototipar rapidamente, utilize os arquivos hospedados em uma CDN:
 
-```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@nodusjs/x@latest/dist/x.js"></script>
-
-<!-- ou para navegadores sem suporte a módulos -->
-<script src="https://cdn.jsdelivr.net/npm/@nodusjs/x@latest/dist/x.iife.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nodusjs/x@latest/dist/x.css">
-```
-
-## Exemplo básico
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Exemplo @nodus/x</title>
-  <script src="https://cdn.jsdelivr.net/npm/@nodusjs/x@latest/dist/x.iife.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nodusjs/x@latest/dist/x.css">
-</head>
-<body>
-  <x-input name="raca">
-    <x-label>Raça de cachorro</x-label>
-  </x-input>
-
-  <x-render>
-    <template>
-      <x-text>{name}</x-text><br />
-    </template>
-    <x-on value="api/ok:method/render"></x-on>
-  </x-render>
-
-  <x-fetch name="api" url="https://api.thedogapi.com/v1/breeds/search?q={}">
-    <x-on value="raca/change:method/get"></x-on>
-  </x-fetch>
-</body>
-</html>
+```txt
+https://www.jsdelivr.com/package/npm/@nodusjs/x
 ```
 
 ## Scripts
