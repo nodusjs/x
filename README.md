@@ -6,7 +6,7 @@
 
 ## Instalação
 
-### npm ou bun
+### npm / yarn / bun
 
 ```bash
 npm install @nodusjs/x
