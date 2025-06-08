@@ -1,7 +1,7 @@
 import { hideble } from "@interface";
 import { after } from "@middleware";
 import { attributeChanged, define } from "@nodusjs/std/directive";
-import { paint, repaint } from "@nodusjs/std/dom";
+import { paint, retouch } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import { truthy } from "@nodusjs/std/spark";
 import { size } from "@spark";
@@ -24,7 +24,7 @@ class Stack extends Echo(HTMLElement) {
   }
 
   @attributeChanged("align")
-  @repaint
+  @retouch
   set align(value) {
     this.#align = value;
   }
@@ -34,7 +34,7 @@ class Stack extends Echo(HTMLElement) {
   }
 
   @attributeChanged("direction")
-  @repaint
+  @retouch
   set direction(value) {
     this.#direction = value;
   }
@@ -44,7 +44,7 @@ class Stack extends Echo(HTMLElement) {
   }
 
   @attributeChanged("gap")
-  @repaint
+  @retouch
   set gap(value) {
     this.#gap = value;
   }
@@ -54,7 +54,7 @@ class Stack extends Echo(HTMLElement) {
   }
 
   @attributeChanged("height", size)
-  @repaint
+  @retouch
   set height(value) {
     this.#height = value;
   }
@@ -74,7 +74,7 @@ class Stack extends Echo(HTMLElement) {
   }
 
   @attributeChanged("justify")
-  @repaint
+  @retouch
   set justify(value) {
     this.#justify = value;
   }
@@ -84,7 +84,7 @@ class Stack extends Echo(HTMLElement) {
   }
 
   @attributeChanged("width", size)
-  @repaint
+  @retouch
   set width(value) {
     this.#width = value;
   }

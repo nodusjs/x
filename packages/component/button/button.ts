@@ -1,11 +1,11 @@
 import { disableable, emitter, hideble } from "@interface";
 import { around } from "@middleware";
 import { attributeChanged, define } from "@nodusjs/std/directive";
-import { paint, repaint } from "@nodusjs/std/dom";
+import { paint, retouch } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import on from "@nodusjs/std/event";
 import { truthy } from "@nodusjs/std/spark";
-import { stop } from "@spark";
+import { size, stop } from "@spark";
 import { component } from "./component";
 import { style } from "./style";
 import { token } from "./token";
@@ -72,7 +72,7 @@ class Button extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("color")
-  @repaint
+  @retouch
   set color(value) {
     this.#color = value;
   }
@@ -151,7 +151,7 @@ class Button extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("only-icon", truthy)
-  @repaint
+  @retouch
   set onlyIcon(value) {
     this.#onlyIcon = value;
   }
@@ -174,7 +174,7 @@ class Button extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("size")
-  @repaint
+  @retouch
   set size(value) {
     this.#size = value;
   }
@@ -240,7 +240,7 @@ class Button extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("variant")
-  @repaint
+  @retouch
   set variant(value) {
     this.#variant = value;
   }
@@ -262,8 +262,8 @@ class Button extends Echo(HTMLElement) {
    * @param {string} value
    * @returns {void}
    */
-  @attributeChanged("width")
-  @repaint
+  @attributeChanged("width", size)
+  @retouch
   set width(value) {
     this.#width = value;
   }
@@ -299,9 +299,16 @@ class Button extends Echo(HTMLElement) {
   @on.click("*", stop)
   @around(emitter)
   click() {
-    const init = { bubbles: true, cancelable: true, detail: this.value };
-    const event = new CustomEvent("click", init);
-    this.dispatchEvent(event);
+    if (this.disabled) return this;
+
+    this.dispatchEvent(
+      new CustomEvent("click", {
+        bubbles: true,
+        cancelable: true,
+        detail: this.value,
+      }),
+    );
+
     return this;
   }
 

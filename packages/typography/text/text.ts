@@ -1,5 +1,5 @@
 import { attributeChanged, define } from "@nodusjs/std/directive";
-import { paint, repaint } from "@nodusjs/std/dom";
+import { paint, repaint, retouch } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import { truthy } from "@nodusjs/std/spark";
 import { component } from "./component";
@@ -48,13 +48,13 @@ class Text extends Echo(HTMLElement) {
   }
 
   /**
-   * Ajusta o alinhamento do texto e dispara repaint.
+   * Ajusta o alinhamento do texto e dispara retouch.
    *
    * @param {'left'|'center'|'right'|'justify'} value
    * @returns {void}
    */
   @attributeChanged("align")
-  @repaint
+  @retouch
   set align(value) {
     this.#align = value;
   }
@@ -96,7 +96,7 @@ class Text extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("color")
-  @repaint
+  @retouch
   set color(value) {
     this.#color = value;
   }
@@ -117,7 +117,7 @@ class Text extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("on-brand", truthy)
-  @repaint
+  @retouch
   set onBrand(value) {
     this.#onBrand = value;
   }
@@ -138,7 +138,7 @@ class Text extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("size")
-  @repaint
+  @retouch
   set size(value) {
     this.#size = value;
   }
@@ -159,7 +159,7 @@ class Text extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("wrap")
-  @repaint
+  @retouch
   set wrap(value) {
     this.#wrap = value;
   }
@@ -180,7 +180,7 @@ class Text extends Echo(HTMLElement) {
    * @returns {void}
    */
   @attributeChanged("weight")
-  @repaint
+  @retouch
   set weight(value) {
     this.#weight = value;
   }
