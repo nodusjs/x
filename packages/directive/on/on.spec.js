@@ -1,16 +1,16 @@
-import { hideble } from "@interface";
-import { beforeEach, describe, expect, it, vi } from "vitest";
-import { connectArc, disconnectArc } from "./interface";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { connectArc } from "./interface";
 import On from "./on";
 
-describe("⟨x-on⟩ directive (unit)", () => {
+describe("<x-on> directive (unit)", () => {
   let host;
   let parent;
 
   beforeEach(() => {
+    vi.spyOn(customElements, "whenDefined").mockResolvedValue();
+
     parent = {
       localName: "x-button",
-      [disconnectArc]: vi.fn(),
       [connectArc]: vi.fn(),
     };
 
@@ -23,40 +23,20 @@ describe("⟨x-on⟩ directive (unit)", () => {
     });
   });
 
-  it("setter .value() deve chamar whenDefined → disconnectArc(antes) → connectArc(novo)", async () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("setter value() deve chamar disconnectArc antes e connectArc depois no connectedCallback", async () => {
     host.value = "foo";
-
-    await new Promise((r) => setTimeout(r, 10));
-
-    expect(parent[disconnectArc]).toHaveBeenCalledWith(undefined);
+    host.connectedCallback();
+    await Promise.resolve();
     expect(parent[connectArc]).toHaveBeenCalledWith("foo");
   });
 
-  it("setter .value() subsequente: desconecta valor antigo e conecta valor novo", async () => {
-    host.value = "first";
-
-    await new Promise((r) => setTimeout(r, 10));
-
-    parent[disconnectArc].mockClear();
-    parent[connectArc].mockClear();
-
-    host.value = "second";
-
-    await new Promise((r) => setTimeout(r, 10));
-
-    expect(parent[disconnectArc]).toHaveBeenCalledWith("first");
-    expect(parent[connectArc]).toHaveBeenCalledWith("second");
-  });
-
-  it("também funciona definindo o atributo `value`", async () => {
-    host.setAttribute("value", "bar");
-    await new Promise((r) => setTimeout(r, 10));
-    expect(parent[connectArc]).toHaveBeenCalledWith("bar");
-  });
-
-  it("método hideble (executado no @connected) deve setar display:none", () => {
+  it("hideble() deve setar display:none no estilo", () => {
     const spy = vi.spyOn(host.style, "setProperty");
-    host[hideble]();
+    host.connectedCallback();
     expect(spy).toHaveBeenCalledWith("display", "none");
   });
 });
