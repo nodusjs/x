@@ -1,8 +1,12 @@
 import { attributeChanged, define } from "@nodusjs/std/directive";
+import { paint, repaint, retouch } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
-import { repaint, retouch } from "nodusjs/std/dom";
+import { component } from "./component";
+import { style } from "./style";
+import { token } from "./token";
 
 @define("x-icon")
+@paint(component, token, style)
 class Icon extends Echo(HTMLElement) {
   #size;
   #use;
