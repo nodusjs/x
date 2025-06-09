@@ -15,6 +15,11 @@ class Icon extends Echo(HTMLElement) {
   set use(value) {
     this.#use = value;
   }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open", delegatesFocus: true });
+  }
 }
 
 export default Icon;
