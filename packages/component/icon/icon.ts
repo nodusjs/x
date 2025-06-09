@@ -4,7 +4,16 @@ import { repaint } from "nodusjs/std/dom";
 
 @define("x-icon")
 class Icon extends Echo(HTMLElement) {
+  #size;
   #use;
+
+  get size() {
+    return (this.#size ??= "md");
+  }
+
+  set size(value) {
+    this.#size = value;
+  }
 
   get use() {
     return (this.#use ??= "");
