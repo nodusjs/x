@@ -11,6 +11,7 @@ class Icon extends Echo(HTMLElement) {
     return (this.#size ??= "md");
   }
 
+  @attributeChanged("size")
   set size(value) {
     this.#size = value;
   }
