@@ -1,4 +1,4 @@
-import { define } from "@nodusjs/std/directive";
+import { attributeChanged, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 
 @define("x-icon")
@@ -9,6 +9,7 @@ class Icon extends Echo(HTMLElement) {
     return (this.#use ??= "");
   }
 
+  @attributeChanged("use")
   set use(value) {
     this.#use = value;
   }
