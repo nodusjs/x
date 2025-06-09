@@ -1,6 +1,6 @@
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
-import { repaint } from "nodusjs/std/dom";
+import { repaint, retouch } from "nodusjs/std/dom";
 
 @define("x-icon")
 class Icon extends Echo(HTMLElement) {
@@ -12,6 +12,7 @@ class Icon extends Echo(HTMLElement) {
   }
 
   @attributeChanged("size")
+  @retouch
   set size(value) {
     this.#size = value;
   }
