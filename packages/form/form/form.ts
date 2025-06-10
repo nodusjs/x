@@ -1,4 +1,5 @@
 import { resettable, submittable } from "@interface";
+import { Hidden, Template } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import { paint } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
@@ -9,28 +10,10 @@ import { style } from "./style";
 
 @define("x-form")
 @paint(component, style)
-class Form extends Echo(HTMLElement) {
-  #template;
-
-  get template() {
-    const { innerHTML, children } = (this.#template ??=
-      this.querySelector("template"));
-    return (
-      innerHTML ||
-      Array.from(children)
-        .map((c) => c.outerHTML)
-        .join("")
-    );
-  }
-
-  @attributeChanged("template")
-  set template(value) {
-    this.#template = document.querySelector(`#${value}`).innerHTML;
-  }
-
+class Form extends Echo(Template(Hidden(HTMLElement))) {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: "open", delegatesFocus: true });
   }
 
   reset() {

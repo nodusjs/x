@@ -11,4 +11,8 @@ export const style = () =>
         gap: var(--spacing-lg);
       }
     }
+
+    :host(:state(hidden)) {
+      display: none;
+    }
   `;

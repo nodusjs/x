@@ -4,6 +4,8 @@ export const style = (icon) =>
   css`
     :host {
       color: currentcolor;
+      direction: ltr;
+      display: inline-block;
       font-family: 'Material Symbols Outlined';
       font-style: normal;
       font-size: var(--icon-font-size-${icon.size});
@@ -11,11 +13,13 @@ export const style = (icon) =>
       line-height: 1;
       letter-spacing: normal;
       text-transform: none;
-      display: inline-block;
       white-space: nowrap;
       word-wrap: normal;
-      direction: ltr;
       -moz-font-feature-settings: 'liga';
       -moz-osx-font-smoothing: grayscale;
+    }
+
+    :host(:state(hidden)) {
+      display: none;
     }
   `;

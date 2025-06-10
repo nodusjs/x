@@ -1,10 +1,11 @@
-import { emitter, hideble } from "@interface";
+import { emitter } from "@interface";
 import { around } from "@middleware";
-import { attributeChanged, connected, define } from "@nodusjs/std/directive";
+import { Headless } from "@mixin";
+import { attributeChanged, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 
 @define("x-find")
-class Find extends Echo(HTMLElement) {
+class Find extends Echo(Headless(HTMLElement)) {
   #key;
   #value;
 
@@ -39,12 +40,6 @@ class Find extends Echo(HTMLElement) {
     };
     const event = new CustomEvent("find", init);
     this.parentElement.dispatchEvent(event);
-    return this;
-  }
-
-  @connected
-  [hideble]() {
-    this.style.setProperty("display", "none");
     return this;
   }
 }

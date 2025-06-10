@@ -1,3 +1,4 @@
+import { Hidden } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import { paint, repaint, retouch } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
@@ -7,7 +8,7 @@ import { token } from "./token";
 
 @define("x-icon")
 @paint(component, token, style)
-class Icon extends Echo(HTMLElement) {
+class Icon extends Echo(Hidden(HTMLElement)) {
   #size;
   #use;
 

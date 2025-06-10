@@ -1,11 +1,12 @@
-import { emitter, hideble } from "@interface";
+import { emitter } from "@interface";
 import { around } from "@middleware";
-import { attributeChanged, connected, define } from "@nodusjs/std/directive";
+import { Headless } from "@mixin";
+import { attributeChanged, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 import { uuid } from "./uuid";
 
 @define("x-dataset")
-class Dataset extends Echo(HTMLElement) {
+class Dataset extends Echo(Headless(HTMLElement)) {
   #upsert;
   #map = new Map();
 
@@ -29,15 +30,13 @@ class Dataset extends Echo(HTMLElement) {
   }
 
   [emitter]() {
-    const init = { bubbles: true, cancelable: true, detail: this.value };
-    const event = new CustomEvent("change", init);
-    this.dispatchEvent(event);
-    return this;
-  }
-
-  @connected
-  [hideble]() {
-    this.style.setProperty("display", "none");
+    this.dispatchEvent(
+      new CustomEvent("change", {
+        bubbles: true,
+        cancelable: true,
+        detail: this.value,
+      }),
+    );
     return this;
   }
 

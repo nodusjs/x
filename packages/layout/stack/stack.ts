@@ -1,23 +1,17 @@
-import { hideble } from "@interface";
-import { after } from "@middleware";
+import { Height, Hidden, Width } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import { paint, retouch } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
-import { truthy } from "@nodusjs/std/spark";
-import { size } from "@spark";
 import { component } from "./component";
 import { style } from "./style";
 
 @define("x-stack")
 @paint(component, style)
-class Stack extends Echo(HTMLElement) {
+class Stack extends Echo(Hidden(Height(Width(HTMLElement)))) {
   #align;
   #direction;
-  #height;
-  #hidden;
   #justify;
   #gap;
-  #width;
 
   get align() {
     return (this.#align ??= "start");
@@ -49,26 +43,6 @@ class Stack extends Echo(HTMLElement) {
     this.#gap = value;
   }
 
-  get height() {
-    return (this.#height ??= "auto");
-  }
-
-  @attributeChanged("height", size)
-  @retouch
-  set height(value) {
-    this.#height = value;
-  }
-
-  get hidden() {
-    return (this.#hidden ??= false);
-  }
-
-  @attributeChanged("hidden", truthy)
-  @after(hideble)
-  set hidden(value) {
-    this.#hidden = value;
-  }
-
   get justify() {
     return (this.#justify ??= "flex-start");
   }
@@ -79,26 +53,9 @@ class Stack extends Echo(HTMLElement) {
     this.#justify = value;
   }
 
-  get width() {
-    return (this.#width ??= "auto");
-  }
-
-  @attributeChanged("width", size)
-  @retouch
-  set width(value) {
-    this.#width = value;
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-  }
-
-  [hideble]() {
-    this.hidden
-      ? this.style.setProperty("display", "none")
-      : this.style.removeProperty("display");
-    return this;
   }
 }
 

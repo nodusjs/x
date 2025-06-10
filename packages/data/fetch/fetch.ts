@@ -1,12 +1,13 @@
 import { interpolate } from "@directive/render/interpolate";
-import { emitter, hideble } from "@interface";
+import { emitter } from "@interface";
 import { after, before } from "@middleware";
-import { attributeChanged, connected, define } from "@nodusjs/std/directive";
+import { Headless } from "@mixin";
+import { attributeChanged, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 import http from "./http";
 
 @define("x-fetch")
-class Fetch extends Echo(HTMLElement) {
+class Fetch extends Echo(Headless(HTMLElement)) {
   #controller;
   #url;
 
@@ -53,12 +54,6 @@ class Fetch extends Echo(HTMLElement) {
       .get(interpolate(this.url, payload))
       .signal(this.controller.signal)
       .json();
-  }
-
-  @connected
-  [hideble]() {
-    this.style.setProperty("display", "none");
-    return this;
   }
 
   @before("abort")
