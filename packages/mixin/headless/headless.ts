@@ -5,7 +5,7 @@ export const Headless = (Super) => {
   class C extends Super {
     @connected
     [hideable]() {
-      this.style.setProperty("disaplay", "none");
+      this.style.setProperty("display", "none");
       return this;
     }
   }

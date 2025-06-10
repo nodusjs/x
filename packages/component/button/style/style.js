@@ -3,6 +3,8 @@ import { css } from "@nodusjs/std/dom";
 export const style = (button) =>
   css`
     :host {
+      width: ${button.onlyIcon ? `var(--button-width-${button.size})` : button.width};
+
       button {
         align-items: center;
         aspect-ratio: ${button.onlyIcon ? "1/1" : "auto"};
