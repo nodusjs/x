@@ -32,6 +32,7 @@ export default defineConfig({
       "@interface": resolve(__dirname, "packages/interface"),
       "@layout": resolve(__dirname, "packages/layout"),
       "@middleware": resolve(__dirname, "packages/middleware"),
+      "@mixin": resolve(__dirname, "packages/mixin"),
       "@polyfill": resolve(__dirname, "packages/polyfill"),
       "@spark": resolve(__dirname, "packages/spark"),
       "@token": resolve(__dirname, "packages/token"),
