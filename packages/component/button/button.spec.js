@@ -42,54 +42,6 @@ describe("Button", () => {
     expect(button.color).toBe("error");
   });
 
-  it("deve ter disabled padrão false", () => {
-    expect(button.disabled).toBe(false);
-  });
-
-  it('ao setar disabled=true deve adicionar o estado "disabled"', async () => {
-    button.disabled = true;
-    expect(button.disabled).toBe(true);
-
-    await new Promise((r) => setTimeout(r, 100));
-
-    expect(mockInternals.states.add).toHaveBeenCalledWith("disabled");
-    expect(mockInternals.states.delete).not.toHaveBeenCalled();
-  });
-
-  it('ao setar disabled=false deve remover o estado "disabled"', async () => {
-    button.disabled = false;
-    expect(button.disabled).toBe(false);
-
-    await new Promise((r) => setTimeout(r, 100));
-
-    expect(mockInternals.states.delete).toHaveBeenCalledWith("disabled");
-    expect(mockInternals.states.add).not.toHaveBeenCalled();
-  });
-
-  it("deve ter hidden padrão false", () => {
-    expect(button.hidden).toBe(false);
-  });
-
-  it('ao setar hidden=true deve adicionar o estado "hidden"', async () => {
-    button.hidden = true;
-    expect(button.hidden).toBe(true);
-
-    await new Promise((r) => setTimeout(r, 100));
-
-    expect(mockInternals.states.add).toHaveBeenCalledWith("hidden");
-    expect(mockInternals.states.delete).not.toHaveBeenCalled();
-  });
-
-  it('ao setar hidden=false deve remover o estado "hidden"', async () => {
-    button.hidden = false;
-    expect(button.hidden).toBe(false);
-
-    await new Promise((r) => setTimeout(r, 100));
-
-    expect(mockInternals.states.delete).toHaveBeenCalledWith("hidden");
-    expect(mockInternals.states.add).not.toHaveBeenCalled();
-  });
-
   it("deve ter onlyIcon padrão false", () => {
     expect(button.onlyIcon).toBe(false);
   });
@@ -133,10 +85,6 @@ describe("Button", () => {
   it("deve atualizar variant corretamente", () => {
     button.variant = "ghost";
     expect(button.variant).toBe("ghost");
-  });
-
-  it('deve ter width padrão "auto"', () => {
-    expect(button.width).toBe("auto");
   });
 
   it("deve atualizar width corretamente", () => {

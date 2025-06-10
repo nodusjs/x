@@ -19,8 +19,8 @@ export const Hidden = (Super) => {
 
     [hideable]() {
       this.hidden
-        ? super.internals.states.add("hidden")
-        : super.internals.states.delete("hidden");
+        ? this.internals.states.add("hidden")
+        : this.internals.states.delete("hidden");
       return this;
     }
   }

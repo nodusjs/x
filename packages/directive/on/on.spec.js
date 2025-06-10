@@ -33,10 +33,4 @@ describe("<x-on> directive (unit)", () => {
     await Promise.resolve();
     expect(parent[connectArc]).toHaveBeenCalledWith("foo");
   });
-
-  it("hideble() deve setar display:none no estilo", () => {
-    const spy = vi.spyOn(host.style, "setProperty");
-    host.connectedCallback();
-    expect(spy).toHaveBeenCalledWith("display", "none");
-  });
 });

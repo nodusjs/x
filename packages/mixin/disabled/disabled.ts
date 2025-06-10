@@ -19,8 +19,8 @@ export const Disabled = (Super) => {
 
     [disableable]() {
       this.disabled
-        ? super.internals.states.add("disabled")
-        : super.internals.states.delete("disabled");
+        ? this.internals.states.add("disabled")
+        : this.internals.states.delete("disabled");
       return this;
     }
   }

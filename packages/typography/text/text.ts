@@ -14,6 +14,7 @@ class Text extends Echo(Hidden(HTMLElement)) {
   #color;
   #onBrand;
   #size;
+  #weight;
   #wrap;
 
   get align() {
@@ -64,6 +65,16 @@ class Text extends Echo(Hidden(HTMLElement)) {
   @retouch
   set size(value) {
     this.#size = value;
+  }
+
+  get weight() {
+    return (this.#weight ??= "medium");
+  }
+
+  @attributeChanged("weight")
+  @retouch
+  set weight(value) {
+    this.#weight = value;
   }
 
   get wrap() {
