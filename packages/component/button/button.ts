@@ -1,4 +1,3 @@
-import { disableable, emitter, hideble } from "@interface";
 import { around } from "@middleware";
 import { Disabled, Hidden, Width } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
@@ -8,6 +7,7 @@ import on from "@nodusjs/std/event";
 import { truthy } from "@nodusjs/std/spark";
 import { size, stop } from "@spark";
 import { component } from "./component";
+import { emitter } from "./interface";
 import { style } from "./style";
 import { token } from "./token";
 
@@ -98,13 +98,9 @@ class Button extends Echo(Disabled(Hidden(Width(HTMLElement)))) {
   click() {
     if (super.disabled) return this;
 
-    this.dispatchEvent(
-      new CustomEvent("click", {
-        bubbles: true,
-        cancelable: true,
-        detail: this.value,
-      }),
-    );
+    const init = { bubbles: true, cancelable: true, detail: this.value };
+    const event = new CustomEvent("click", init);
+    this.dispatchEvent(event);
 
     return this;
   }

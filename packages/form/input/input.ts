@@ -1,11 +1,5 @@
-import {
-  bindable,
-  disableable,
-  reflactable,
-  reportable,
-  validable,
-} from "@interface";
-import { after } from "@middleware";
+import { disableable, reflactable, reportable, validable } from "@interface";
+import { around } from "@middleware";
 import { Hidden } from "@mixin";
 import {
   attributeChanged,
@@ -21,6 +15,7 @@ import { truthy } from "@nodusjs/std/spark";
 import { prevent, value } from "@spark";
 import { component } from "./component";
 import Element from "./element";
+import { dispatch, input } from "./interface";
 import { invalid } from "./invalid";
 import { style } from "./style";
 
@@ -40,7 +35,7 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("disabled", truthy)
-  @after(disableable)
+  @around(disableable)
   set disabled(value) {
     this.element.disabled = value;
   }
@@ -80,8 +75,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("max")
-  @after(validable)
-  @after(reflactable)
+  @around(validable)
+  @around(reflactable)
   set max(value) {
     this.element.max = value;
   }
@@ -91,8 +86,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("maxlength")
-  @after(validable)
-  @after(reflactable)
+  @around(validable)
+  @around(reflactable)
   set maxLength(value) {
     this.element.maxlength = value;
   }
@@ -102,8 +97,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("min")
-  @after(validable)
-  @after(reflactable)
+  @around(validable)
+  @around(reflactable)
   set min(value) {
     this.element.min = value;
   }
@@ -113,8 +108,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("minlength")
-  @after(validable)
-  @after(reflactable)
+  @around(validable)
+  @around(reflactable)
   set minLength(value) {
     this.element.minlength = value;
   }
@@ -133,8 +128,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("pattern")
-  @after(validable)
-  @after(reflactable)
+  @around(validable)
+  @around(reflactable)
   set pattern(value) {
     this.element.pattern = value;
   }
@@ -162,8 +157,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("required", truthy)
-  @after(validable)
-  @after(reflactable)
+  @around(validable)
+  @around(reflactable)
   set required(value) {
     this.element.required = value;
   }
@@ -173,8 +168,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("step")
-  @after(validable)
-  @after(reflactable)
+  @around(validable)
+  @around(reflactable)
   set step(value) {
     this.element.step = value;
   }
@@ -184,8 +179,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("type")
-  @after(validable)
-  @after(reflactable)
+  @around(validable)
+  @around(reflactable)
   set type(value) {
     this.element.type = value;
   }
@@ -203,8 +198,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("value")
-  @after(validable)
-  @after(reflactable)
+  @around(validable)
+  @around(reflactable)
   set value(value) {
     this.element.value = value;
   }
@@ -222,13 +217,6 @@ class Input extends Echo(Hidden(HTMLElement)) {
     this.attachShadow({ mode: "open", delegatesFocus: true });
   }
 
-  @on.input("input", value)
-  [bindable](detail) {
-    this.value = detail;
-    this.dispatchEvent(new CustomEvent("change", { detail }));
-    return this;
-  }
-
   checkValidity() {
     return this.internals.checkValidity();
   }
@@ -237,6 +225,20 @@ class Input extends Echo(Hidden(HTMLElement)) {
     this.disabled
       ? this.internals.states.add("disabled")
       : this.internals.states.delete("disabled");
+    return this;
+  }
+
+  [dispatch]() {
+    const init = { bubbles: true, cancelable: true, detail: this.value };
+    const event = new CustomEvent("change", init);
+    this.dispatchEvent(event);
+    return this;
+  }
+
+  @on.input("input", value)
+  @around(dispatch)
+  [input](val) {
+    this.value = val;
     return this;
   }
 
@@ -252,7 +254,7 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @formReset
-  @after(reflactable)
+  @around(reflactable)
   reset() {
     this.element.value = "";
     this.removeAttribute("value");

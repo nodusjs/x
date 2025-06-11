@@ -1,14 +1,14 @@
-import { emitter } from "@interface";
 import { around } from "@middleware";
 import { Headless } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
-import { uuid } from "./uuid";
+import { dispatch } from "./interface";
+import { Storage } from "./storage";
 
 @define("x-dataset")
 class Dataset extends Echo(Headless(HTMLElement)) {
+  #storage = Storage.from(this);
   #upsert;
-  #map = new Map();
 
   get upsert() {
     return this.#upsert;
@@ -20,37 +20,31 @@ class Dataset extends Echo(Headless(HTMLElement)) {
   }
 
   get value() {
-    return [...this.#map.values()];
+    return this.#storage.values();
   }
 
-  @around(emitter)
+  @around(dispatch)
   delete(key) {
-    this.#map.delete(key);
+    this.#storage.delete(key);
     return this;
   }
 
-  [emitter]() {
-    this.dispatchEvent(
-      new CustomEvent("change", {
-        bubbles: true,
-        cancelable: true,
-        detail: this.value,
-      }),
-    );
+  [dispatch]() {
+    const init = { bubbles: true, cancelable: true, detail: this.value };
+    const event = new CustomEvent("change", init);
+    this.dispatchEvent(event);
     return this;
   }
 
-  @around(emitter)
-  push(payload) {
-    const key = payload[this.upsert] ?? uuid();
-    const value = this.#map.get(key) ?? {};
-    this.#map.set(key, { ...value, ...payload, [this.upsert]: key });
+  @around(dispatch)
+  push(data) {
+    this.#storage.push(data);
     return this;
   }
 
-  @around(emitter)
+  @around(dispatch)
   reset() {
-    this.#map.clear();
+    this.#storage.clear();
     return this;
   }
 }
