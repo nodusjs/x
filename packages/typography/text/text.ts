@@ -12,6 +12,7 @@ class Text extends Echo(Hidden(HTMLElement)) {
   #align;
   #as;
   #color;
+  #internals;
   #onBrand;
   #size;
   #weight;
@@ -45,6 +46,10 @@ class Text extends Echo(Hidden(HTMLElement)) {
   @retouch
   set color(value) {
     this.#color = value;
+  }
+
+  get internals() {
+    return (this.#internals ??= this.attachInternals());
   }
 
   get onBrand() {

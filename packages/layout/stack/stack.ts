@@ -10,6 +10,7 @@ import { style } from "./style";
 class Stack extends Echo(Hidden(Height(Width(HTMLElement)))) {
   #align;
   #direction;
+  #internals;
   #justify;
   #gap;
 
@@ -41,6 +42,10 @@ class Stack extends Echo(Hidden(Height(Width(HTMLElement)))) {
   @retouch
   set gap(value) {
     this.#gap = value;
+  }
+
+  get internals() {
+    return (this.#internals ??= this.attachInternals());
   }
 
   get justify() {

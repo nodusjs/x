@@ -12,7 +12,7 @@ export const style = (stack) =>
       justify-content: ${stack.justify};
       width: ${stack.width};
     }
-    
+
     :host(:state(hidden)) {
       display: none;
     }
