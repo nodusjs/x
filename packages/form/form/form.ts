@@ -11,6 +11,12 @@ import { style } from "./style";
 @define("x-form")
 @paint(component, style)
 class Form extends Echo(Template(Hidden(HTMLElement))) {
+  #internals;
+
+  get internals() {
+    return (this.#internals ??= this.attachInternals());
+  }
+
   constructor() {
     super();
     this.attachShadow({ mode: "open", delegatesFocus: true });
