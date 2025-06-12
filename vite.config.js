@@ -29,7 +29,6 @@ export default defineConfig({
       "@data": resolve(__dirname, "packages/data"),
       "@directive": resolve(__dirname, "packages/directive"),
       "@form": resolve(__dirname, "packages/form"),
-      "@interface": resolve(__dirname, "packages/interface"),
       "@layout": resolve(__dirname, "packages/layout"),
       "@middleware": resolve(__dirname, "packages/middleware"),
       "@mixin": resolve(__dirname, "packages/mixin"),

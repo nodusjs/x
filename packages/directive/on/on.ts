@@ -1,7 +1,6 @@
-import { reportable } from "@interface";
 import { Headless } from "@mixin";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
-import { connectArc } from "./interface";
+import { connectArc, setter } from "./interface";
 
 @define("x-on")
 class On extends Headless(HTMLElement) {
@@ -17,7 +16,7 @@ class On extends Headless(HTMLElement) {
   }
 
   @connected
-  async [reportable]() {
+  async [setter]() {
     await customElements.whenDefined(this.parentElement?.localName);
     this.parentElement?.[connectArc]?.(this.value);
     return this;

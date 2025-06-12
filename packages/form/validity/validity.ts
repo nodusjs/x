@@ -1,4 +1,3 @@
-import { reflactable, resettable, slotable, validable } from "@interface";
 import {
   attributeChanged,
   connected,
@@ -8,6 +7,7 @@ import {
 import { paint } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import { component } from "./component";
+import { reflectable, resettable, slottable, validatable } from "./interface";
 import { style } from "./style";
 
 @define("x-validity")
@@ -39,13 +39,6 @@ class Validity extends Echo(HTMLElement) {
     this.attachShadow({ mode: "open" });
   }
 
-  [validable]() {
-    this.parentElement.validity[this.state]
-      ? this.internals.states.add("invalid")
-      : this.internals.states.delete("invalid");
-    return this;
-  }
-
   @disconnected
   remove() {
     super.remove();
@@ -54,17 +47,11 @@ class Validity extends Echo(HTMLElement) {
   }
 
   @connected
-  [slotable]() {
-    this.setAttribute("slot", "validity");
-    return this;
-  }
-
-  @connected
-  async [reflactable]() {
+  async [reflectable]() {
     await customElements.whenDefined(this.parentElement?.localName);
 
     for (const event of ["change", "invalid"]) {
-      this.parentElement.addEventListener(event, this[validable].bind(this), {
+      this.parentElement.addEventListener(event, this[validatable].bind(this), {
         signal: this.controller.signal,
       });
     }
@@ -78,6 +65,19 @@ class Validity extends Echo(HTMLElement) {
 
   [resettable]() {
     this.internals.states.delete("invalid");
+    return this;
+  }
+
+  @connected
+  [slottable]() {
+    this.setAttribute("slot", "validity");
+    return this;
+  }
+
+  [validatable]() {
+    this.parentElement.validity[this.state]
+      ? this.internals.states.add("invalid")
+      : this.internals.states.delete("invalid");
     return this;
   }
 }

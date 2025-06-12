@@ -7,7 +7,7 @@ import { style } from "./style";
 
 @define("x-stack")
 @paint(component, style)
-class Stack extends Echo(Hidden(Height(Width(HTMLElement)))) {
+class Stack extends Echo(Height(Hidden(Width(HTMLElement)))) {
   #align;
   #direction;
   #internals;

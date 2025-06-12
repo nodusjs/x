@@ -1,8 +1,8 @@
-import { emitter } from "@interface";
 import { around } from "@middleware";
 import { Headless } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
+import { dispatch } from "./interface";
 
 @define("x-find")
 class Find extends Echo(Headless(HTMLElement)) {
@@ -23,21 +23,17 @@ class Find extends Echo(Headless(HTMLElement)) {
   }
 
   @attributeChanged("value")
-  @around(emitter)
+  @around(dispatch)
   set value(value) {
     this.#value = value;
   }
 
-  async [emitter]() {
+  async [dispatch]() {
     await customElements.whenDefined(this.parentElement?.localName);
     const detail = this.parentElement.value.find(
-      (tuple) => tuple[this.key] === this.value,
+      ({ [this.key]: value }) => value === this.value,
     );
-    const init = {
-      bubbles: true,
-      cancelable: true,
-      detail,
-    };
+    const init = { bubbles: true, cancelable: true, detail };
     const event = new CustomEvent("find", init);
     this.parentElement.dispatchEvent(event);
     return this;

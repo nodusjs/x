@@ -1,4 +1,3 @@
-import { resettable, submittable } from "@interface";
 import { Hidden, Template } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import { paint } from "@nodusjs/std/dom";
@@ -6,11 +5,12 @@ import Echo from "@nodusjs/std/echo";
 import on from "@nodusjs/std/event";
 import { formData, prevent, stop } from "@spark";
 import { component } from "./component";
+import { resettable, submittable } from "./interface";
 import { style } from "./style";
 
 @define("x-form")
 @paint(component, style)
-class Form extends Echo(Template(Hidden(HTMLElement))) {
+class Form extends Echo(Hidden(Template(HTMLElement))) {
   #internals;
 
   get internals() {

@@ -1,4 +1,3 @@
-import { disableable, reflactable, reportable, validable } from "@interface";
 import { around } from "@middleware";
 import { Hidden } from "@mixin";
 import {
@@ -15,7 +14,14 @@ import { truthy } from "@nodusjs/std/spark";
 import { prevent, value } from "@spark";
 import { component } from "./component";
 import Element from "./element";
-import { dispatch, input } from "./interface";
+import {
+  disableable,
+  dispatch,
+  input,
+  reflectable,
+  reportable,
+  validatable,
+} from "./interface";
 import { invalid } from "./invalid";
 import { style } from "./style";
 
@@ -75,8 +81,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("max")
-  @around(validable)
-  @around(reflactable)
+  @around(validatable)
+  @around(reflectable)
   set max(value) {
     this.element.max = value;
   }
@@ -86,8 +92,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("maxlength")
-  @around(validable)
-  @around(reflactable)
+  @around(validatable)
+  @around(reflectable)
   set maxLength(value) {
     this.element.maxlength = value;
   }
@@ -97,8 +103,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("min")
-  @around(validable)
-  @around(reflactable)
+  @around(validatable)
+  @around(reflectable)
   set min(value) {
     this.element.min = value;
   }
@@ -108,8 +114,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("minlength")
-  @around(validable)
-  @around(reflactable)
+  @around(validatable)
+  @around(reflectable)
   set minLength(value) {
     this.element.minlength = value;
   }
@@ -128,8 +134,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("pattern")
-  @around(validable)
-  @around(reflactable)
+  @around(validatable)
+  @around(reflectable)
   set pattern(value) {
     this.element.pattern = value;
   }
@@ -157,8 +163,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("required", truthy)
-  @around(validable)
-  @around(reflactable)
+  @around(validatable)
+  @around(reflectable)
   set required(value) {
     this.element.required = value;
   }
@@ -168,8 +174,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("step")
-  @around(validable)
-  @around(reflactable)
+  @around(validatable)
+  @around(reflectable)
   set step(value) {
     this.element.step = value;
   }
@@ -179,8 +185,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("type")
-  @around(validable)
-  @around(reflactable)
+  @around(validatable)
+  @around(reflectable)
   set type(value) {
     this.element.type = value;
   }
@@ -198,8 +204,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("value")
-  @around(validable)
-  @around(reflactable)
+  @around(validatable)
+  @around(reflectable)
   set value(value) {
     this.element.value = value;
   }
@@ -254,7 +260,7 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @formReset
-  @around(reflactable)
+  @around(reflectable)
   reset() {
     this.element.value = "";
     this.removeAttribute("value");
@@ -264,7 +270,7 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @invalid(prevent)
-  [validable]() {
+  [validatable]() {
     this.validity.valid
       ? this.internals.states.delete("invalid")
       : this.internals.states.add("invalid");
@@ -273,16 +279,18 @@ class Input extends Echo(Hidden(HTMLElement)) {
 
   @formAssociated
   [reportable](form) {
+    if (this.disabled) return this;
+
     const event = "formdata";
-    const listener = (event) =>
-      this.disabled || event.formData.set(this.name, this.value);
+    const listener = (event) => event.formData.set(this.name, this.value);
     const options = { signal: this.controller.signal };
     form?.addEventListener?.(event, listener, options);
+
     return this;
   }
 
   @didPaint
-  [reflactable]() {
+  [reflectable]() {
     const { validationMessage, validity } = this.element;
     this.internals.setValidity(validity, validationMessage);
     return this;

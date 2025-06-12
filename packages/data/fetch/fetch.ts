@@ -1,10 +1,10 @@
 import { interpolate } from "@directive/render/interpolate";
-import { emitter } from "@interface";
 import { after, before } from "@middleware";
 import { Headless } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
 import http from "./http";
+import { abort, dispatch } from "./interface";
 
 @define("x-fetch")
 class Fetch extends Echo(Headless(HTMLElement)) {
@@ -24,14 +24,14 @@ class Fetch extends Echo(Headless(HTMLElement)) {
     this.#url = value;
   }
 
-  abort(payload) {
+  [abort](payload) {
     this.controller.abort();
     this.#controller = new AbortController();
     return payload;
   }
 
-  @before("abort")
-  @after(emitter)
+  @before(abort)
+  @after(dispatch)
   delete(payload) {
     return http
       .delete(interpolate(this.url, payload))
@@ -39,7 +39,7 @@ class Fetch extends Echo(Headless(HTMLElement)) {
       .json();
   }
 
-  async [emitter](response) {
+  async [dispatch](response) {
     const { data, error } = await response;
     error
       ? this.dispatchEvent(new CustomEvent("error", { detail: data }))
@@ -47,8 +47,8 @@ class Fetch extends Echo(Headless(HTMLElement)) {
     return this;
   }
 
-  @before("abort")
-  @after(emitter)
+  @before(abort)
+  @after(dispatch)
   get(payload) {
     return http
       .get(interpolate(this.url, payload))
@@ -56,8 +56,8 @@ class Fetch extends Echo(Headless(HTMLElement)) {
       .json();
   }
 
-  @before("abort")
-  @after(emitter)
+  @before(abort)
+  @after(dispatch)
   post(payload) {
     return http
       .post(interpolate(this.url, payload))
@@ -66,8 +66,8 @@ class Fetch extends Echo(Headless(HTMLElement)) {
       .json();
   }
 
-  @before("abort")
-  @after(emitter)
+  @before(abort)
+  @after(dispatch)
   put(payload) {
     return http
       .put(interpolate(this.url, payload))

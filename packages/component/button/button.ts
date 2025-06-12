@@ -13,7 +13,7 @@ import { token } from "./token";
 
 @define("x-button")
 @paint(component, token, style)
-class Button extends Echo(Disabled(Hidden(Width(HTMLElement)))) {
+class Button extends Disabled(Echo(Hidden(Width(HTMLElement)))) {
   #color;
   #internals;
   #onlyIcon;
