@@ -1,7 +1,7 @@
-import { around } from "@middleware";
+import { around, before } from "@middleware";
 import { attributeChanged } from "@nodusjs/std/directive";
 import { truthy } from "@nodusjs/std/spark";
-import { hideable } from "./interface";
+import { cleanup, hideable } from "./interface";
 
 export const Hidden = (Super) => {
   class C extends Super {
@@ -13,8 +13,14 @@ export const Hidden = (Super) => {
 
     @attributeChanged("hidden", truthy)
     @around(hideable)
+    @before(cleanup)
     set hidden(value) {
       this.#hidden = value;
+    }
+
+    [cleanup](value) {
+      value === false && this.removeAttribute("hidden");
+      return value;
     }
 
     [hideable]() {
