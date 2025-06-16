@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`component > should generate the expected HTML string for default input 1`] = `
+"
+  <label for="">
+    <slot name="label"></slot>
+  </label>
+  <wrap>
+    <select
+      
+      
+      
+      
+      
+    />
+      <option></option>
+    </select>
+    <x-icon use="keyboard_arrow_down"></x-icon>
+  </wrap>
+  <slot name="validity"></slot>
+"
+`;
+
+exports[`component > should include attributes when properties are set 1`] = `
+"
+  <label for="email">
+    <slot name="label"></slot>
+  </label>
+  <wrap>
+    <select
+      id="email"
+      name="age"
+      value="42"
+      readonly
+      required
+    />
+      <option></option>
+    </select>
+    <x-icon use="keyboard_arrow_down"></x-icon>
+  </wrap>
+  <slot name="validity"></slot>
+"
+`;

@@ -1,5 +1,6 @@
+import { interpolate } from "@directive/render/interpolate";
 import { around } from "@middleware";
-import { Hidden } from "@mixin";
+import { Hidden, Template } from "@mixin";
 import {
   attributeChanged,
   define,
@@ -18,6 +19,7 @@ import {
   change,
   disableable,
   dispatch,
+  hydrate,
   reflectable,
   reportable,
   validatable,
@@ -25,9 +27,9 @@ import {
 import { invalid } from "./invalid";
 import { style } from "./style";
 
-@define("x-input")
+@define("x-select")
 @paint(component, style)
-class Input extends Echo(Hidden(HTMLElement)) {
+class Select extends Echo(Hidden(Template(HTMLElement))) {
   #controller;
   #element;
   #internals;
@@ -63,61 +65,8 @@ class Input extends Echo(Hidden(HTMLElement)) {
     this.element.id = value;
   }
 
-  get inputMode() {
-    return this.element.inputmode;
-  }
-
-  @attributeChanged("inputmode")
-  set elementMode(value) {
-    this.element.inputmode = value;
-  }
-
   get internals() {
     return (this.#internals ??= this.attachInternals());
-  }
-
-  get max() {
-    return (this.element.max ??= "");
-  }
-
-  @attributeChanged("max")
-  @around(validatable)
-  @around(reflectable)
-  set max(value) {
-    this.element.max = value;
-  }
-
-  get maxLength() {
-    return (this.element.maxlength ??= "");
-  }
-
-  @attributeChanged("maxlength")
-  @around(validatable)
-  @around(reflectable)
-  set maxLength(value) {
-    this.element.maxlength = value;
-  }
-
-  get min() {
-    return (this.element.min ??= "");
-  }
-
-  @attributeChanged("min")
-  @around(validatable)
-  @around(reflectable)
-  set min(value) {
-    this.element.min = value;
-  }
-
-  get minLength() {
-    return (this.element.minlength ??= "");
-  }
-
-  @attributeChanged("minlength")
-  @around(validatable)
-  @around(reflectable)
-  set minLength(value) {
-    this.element.minlength = value;
   }
 
   get name() {
@@ -127,26 +76,6 @@ class Input extends Echo(Hidden(HTMLElement)) {
   @attributeChanged("name")
   set name(value) {
     this.element.name = value;
-  }
-
-  get pattern() {
-    return this.element.pattern;
-  }
-
-  @attributeChanged("pattern")
-  @around(validatable)
-  @around(reflectable)
-  set pattern(value) {
-    this.element.pattern = value;
-  }
-
-  get placeholder() {
-    return this.element.placeholder;
-  }
-
-  @attributeChanged("placeholder")
-  set placeholder(value) {
-    this.element.placeholder = value;
   }
 
   get readonly() {
@@ -167,28 +96,6 @@ class Input extends Echo(Hidden(HTMLElement)) {
   @around(reflectable)
   set required(value) {
     this.element.required = value;
-  }
-
-  get step() {
-    return this.element.step;
-  }
-
-  @attributeChanged("step")
-  @around(validatable)
-  @around(reflectable)
-  set step(value) {
-    this.element.step = value;
-  }
-
-  get type() {
-    return this.element.type;
-  }
-
-  @attributeChanged("type")
-  @around(validatable)
-  @around(reflectable)
-  set type(value) {
-    this.element.type = value;
   }
 
   get validationMessage() {
@@ -223,7 +130,7 @@ class Input extends Echo(Hidden(HTMLElement)) {
     this.attachShadow({ mode: "open", delegatesFocus: true });
   }
 
-  @on.input("input", value)
+  @on.change("select", value)
   @around(dispatch)
   [change](val) {
     this.value = val;
@@ -248,10 +155,25 @@ class Input extends Echo(Hidden(HTMLElement)) {
     return this;
   }
 
+  @didPaint
+  [hydrate]() {
+    this.element.append(...this.querySelectorAll("option"));
+    return this;
+  }
+
   @disconnected
   remove() {
     super.remove();
     this.controller.abort();
+    return this;
+  }
+
+  @around("reset")
+  render(payload) {
+    this.element.innerHTML = [{}]
+      .concat(payload)
+      .map((data) => interpolate(super.template, data))
+      .join("");
     return this;
   }
 
@@ -297,4 +219,4 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 }
 
-export default Input;
+export default Select;
