@@ -9,8 +9,13 @@ import { token } from "./token";
 @define("x-icon")
 @paint(component, token, style)
 class Icon extends Echo(Hidden(HTMLElement)) {
+  #internals;
   #size;
   #use;
+
+  get internals() {
+    return (this.#internals ??= this.attachInternals());
+  }
 
   get size() {
     return (this.#size ??= "md");
