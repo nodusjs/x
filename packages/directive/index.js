@@ -1,3 +1,3 @@
 import "./on";
 import "./render";
-import "./router";
+import "./view";
