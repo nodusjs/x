@@ -2,9 +2,10 @@ import { define } from "@nodusjs/std/directive";
 import { paint, repaint } from "@nodusjs/std/dom";
 import { component } from "./component";
 import { render, textContent } from "./interface";
+import { style } from "./style";
 
 @define("x-view")
-@paint(component)
+@paint(component, style)
 class View extends HTMLElement {
   #textContent;
 

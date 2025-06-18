@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`component > deve gerar a string HTML esperada 1`] = `"<p><slot></slot></p>"`;

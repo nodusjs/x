@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`style > gera o CSS esperado com valores customizados e on-brand 1`] = `":host {  }"`;
+
+exports[`style > gera o CSS esperado com valores padrão 1`] = `":host {  }"`;
