@@ -1,3 +1,6 @@
+import { define } from "@nodusjs/std/directive";
+
+@define("x-view")
 class View extends HTMLElement {
   constructor() {
     super();
