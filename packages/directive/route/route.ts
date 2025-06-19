@@ -2,22 +2,13 @@ import { Headless } from "@mixin";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
 import { handle, render } from "./interface";
 import { mismatch } from "./mismatch";
+import { request } from "./request";
 import { urlState } from "./urlState";
 
 @define("x-route")
 class Route extends Headless(HTMLElement) {
-  #name;
   #path;
   #src;
-
-  get name() {
-    return (this.#name ??= "");
-  }
-
-  @attributeChanged("name")
-  set name(value) {
-    this.#name = value;
-  }
 
   get path() {
     return (this.#path ??= "");
@@ -42,8 +33,7 @@ class Route extends Headless(HTMLElement) {
   async [handle]() {
     if (mismatch(this.path)) return this;
     await customElements.whenDefined(this.parentElement?.localName);
-    const textContent = await fetch(this.src).then((r) => r.text());
-    this.parentElement?.[render]?.(textContent);
+    this.parentElement[render]?.(await request(this.src));
     return this;
   }
 }
