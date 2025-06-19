@@ -1,5 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`button style > gera o CSS esperado com valores customizados e onlyIcon 1`] = `":host {  }"`;
-
-exports[`button style > gera o CSS esperado com valores padrão 1`] = `":host {  }"`;

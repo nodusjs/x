@@ -1,3 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`component > deve gerar exatamente um <slot> para projeção do conteúdo filho 1`] = `"<slot></slot>"`;
