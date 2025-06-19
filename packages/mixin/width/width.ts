@@ -7,7 +7,7 @@ export const Width = (Super) => {
     #width;
 
     get width() {
-      return (this.#width ??= false);
+      return (this.#width ??= "auto");
     }
 
     @attributeChanged("width", size)

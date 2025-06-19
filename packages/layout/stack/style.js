@@ -11,6 +11,7 @@ export const style = (stack) =>
       height: ${stack.height};
       justify-content: ${stack.justify};
       width: ${stack.width};
+      width: var(--width-${stack.width}, ${stack.width});
     }
 
     :host(:state(hidden)) {

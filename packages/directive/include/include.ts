@@ -4,9 +4,9 @@ import { component } from "./component";
 import { render, textContent } from "./interface";
 import { style } from "./style";
 
-@define("x-view")
+@define("x-include")
 @paint(component, style)
-class View extends HTMLElement {
+class Include extends HTMLElement {
   #textContent;
 
   get [textContent]() {
@@ -25,4 +25,4 @@ class View extends HTMLElement {
   }
 }
 
-export default View;
+export default Include;

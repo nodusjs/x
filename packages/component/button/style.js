@@ -25,6 +25,7 @@ export const style = (button) =>
         padding: 0 ${button.onlyIcon ? 0 : "var(--spacing-lg)"};
         transition: all 0.2s ease-out;
         width: ${button.onlyIcon ? `var(--button-width-${button.size})` : button.width};
+        width: ${button.onlyIcon ? `var(--button-width-${button.size})` : `var(--width-${button.width}, ${button.width})`};
 
         &:hover {
           background-color: var(--button-background-color-${button.color}-${button.variant}_hover);

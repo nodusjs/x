@@ -7,7 +7,7 @@ export const Height = (Super) => {
     #height;
 
     get height() {
-      return (this.#height ??= false);
+      return (this.#height ??= "auto");
     }
 
     @attributeChanged("height", size)

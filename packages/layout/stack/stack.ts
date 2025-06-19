@@ -35,7 +35,7 @@ class Stack extends Echo(Height(Hidden(Width(HTMLElement)))) {
   }
 
   get gap() {
-    return (this.#gap ??= "lg");
+    return (this.#gap ??= "2xl");
   }
 
   @attributeChanged("gap")
