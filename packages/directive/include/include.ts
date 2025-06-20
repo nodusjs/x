@@ -8,7 +8,7 @@ import { style } from "./style";
 
 @define("x-include")
 @paint(component, style)
-class Include extends Echi(HTMLElement) {
+class Include extends Echo(HTMLElement) {
   #src;
   #textContent;
 
