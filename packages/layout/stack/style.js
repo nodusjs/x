@@ -5,6 +5,7 @@ export const style = (stack) =>
     :host {
       align-items: ${stack.align};
       box-sizing: border-box;
+      container-type: inline-size;
       display: flex;
       flex-direction: ${stack.direction};
       gap: var(--spacing-${stack.gap});

@@ -7,6 +7,7 @@ export const style = (card) =>
       border: 1px solid var(--border-secondary);
       border-radius: var(--radius-xl);
       box-sizing: border-box;
+      container-type: inline-size;
       display: inline-flex;
       height: ${card.height};
       padding: var(--spacing-${card.spacing});

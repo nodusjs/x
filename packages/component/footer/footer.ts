@@ -5,9 +5,9 @@ import Echo from "@nodusjs/std/echo";
 import { component } from "./component";
 import { style } from "./style";
 
-@define("x-container")
+@define("x-footer")
 @paint(component, style)
-class Container extends Echo(Hidden(HTMLElement)) {
+class Footer extends Echo(Hidden(HTMLElement)) {
   #internals;
 
   get internals() {
@@ -20,4 +20,4 @@ class Container extends Echo(Hidden(HTMLElement)) {
   }
 }
 
-export default Container;
+export default Footer;
