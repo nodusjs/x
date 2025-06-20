@@ -18,6 +18,7 @@ export const style = () =>
         width: 100%;
 
         content {
+          align-items: center;
           display: flex;
           gap: var(--spacing-2xl);
           justify-content: space-between;
