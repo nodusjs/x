@@ -1,6 +1,8 @@
 import { Headless } from "@mixin";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
+import { extractArgs } from "./extractArgs";
+import { extractParams } from "./extractParams";
 import { handle } from "./interface";
 import { mismatch } from "./mismatch";
 import { urlState } from "./urlState";
@@ -32,6 +34,8 @@ class Route extends Echo(Headless(HTMLElement)) {
   @urlState
   async [handle]() {
     if (mismatch(this.path)) return this;
+    extractParams(this.path);
+    extractArgs();
     await customElements.whenDefined(this.parentElement?.localName);
     this.parentElement.setAttribute("src", this.src);
     return this;

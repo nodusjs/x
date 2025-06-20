@@ -1,3 +1,4 @@
+import { args, params } from "@directive/route";
 import { Headless } from "@mixin";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
@@ -19,7 +20,7 @@ class Macro extends Echo(Headless(HTMLElement)) {
   @connected
   [run]() {
     try {
-      const X = { params: { id: 111 } };
+      const X = { args, params };
       const detail = new Function("X", `return ${this.execute}`)(X);
       requestIdleCallback(() =>
         this.dispatchEvent(new CustomEvent("ok", { detail })),
