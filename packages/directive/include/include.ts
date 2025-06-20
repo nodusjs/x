@@ -1,6 +1,5 @@
-import { around } from "@middleware";
 import { attributeChanged, define } from "@nodusjs/std/directive";
-import { paint, repaint } from "@nodusjs/std/dom";
+import { didPaint, paint, repaint } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import { component } from "./component";
 import { render, textContent } from "./interface";
@@ -18,7 +17,7 @@ class Include extends Echo(HTMLElement) {
   }
 
   @attributeChanged("src")
-  @around(render)
+  @repaint
   set src(value) {
     this.#src = value;
   }
@@ -32,7 +31,7 @@ class Include extends Echo(HTMLElement) {
     this.attachShadow({ mode: "open", delegatesFocus: true });
   }
 
-  @repaint
+  @didPaint
   async [render]() {
     this.#textContent = await request(this.src);
     return this;
