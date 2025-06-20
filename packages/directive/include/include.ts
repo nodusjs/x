@@ -1,5 +1,5 @@
 import { attributeChanged, define } from "@nodusjs/std/directive";
-import { didPaint, paint, repaint } from "@nodusjs/std/dom";
+import { paint, repaint, willPaint } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import { component } from "./component";
 import { render, textContent } from "./interface";
@@ -31,7 +31,7 @@ class Include extends Echo(HTMLElement) {
     this.attachShadow({ mode: "open", delegatesFocus: true });
   }
 
-  @didPaint
+  @willPaint
   async [render]() {
     this.#textContent = await request(this.src);
     return this;
