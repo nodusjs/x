@@ -1,6 +1,6 @@
 import { Headless } from "@mixin";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
-import Echo from "nodusjs/std/echo";
+import Echo from "@nodusjs/std/echo";
 import { run } from "./interface";
 
 @define("x-macro")
