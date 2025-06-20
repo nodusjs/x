@@ -21,9 +21,9 @@ class Macro extends Echo(Headless(HTMLElement)) {
     try {
       const X = { parms: { id: 111 } };
       const detail = new Function("X", `return ${this.execute}`)(X);
-      this.dispatchEvent(new CustomError("ok", { detail }));
+      this.dispatchEvent(new CustomEvent("ok", { detail }));
     } catch (error) {
-      this.dispatchEvent(new CustomError("error", { detail: error.message }));
+      this.dispatchEvent(new CustomEvent("error", { detail: error.message }));
     }
     return this;
   }
