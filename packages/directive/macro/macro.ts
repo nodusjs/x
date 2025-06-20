@@ -1,3 +1,4 @@
+import "@polyfill/setImmediate";
 import { Headless } from "@mixin";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";
@@ -21,7 +22,9 @@ class Macro extends Echo(Headless(HTMLElement)) {
     try {
       const X = { params: { id: 111 } };
       const detail = new Function("X", `return ${this.execute}`)(X);
-      this.dispatchEvent(new CustomEvent("ok", { detail }));
+      setImmediate(() => {
+        this.dispatchEvent(new CustomEvent("ok", { detail }));
+      });
     } catch (error) {
       this.dispatchEvent(new CustomEvent("error", { detail: error.message }));
     }
