@@ -1,3 +1,4 @@
+import { around } from "@middleware";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import { paint, repaint } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
