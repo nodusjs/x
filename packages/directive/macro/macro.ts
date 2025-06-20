@@ -19,7 +19,7 @@ class Macro extends Echo(Headless(HTMLElement)) {
   @connected
   [run]() {
     try {
-      const X = { parms: { id: 111 } };
+      const X = { params: { id: 111 } };
       const detail = new Function("X", `return ${this.execute}`)(X);
       this.dispatchEvent(new CustomEvent("ok", { detail }));
     } catch (error) {
