@@ -27,10 +27,12 @@ class Render extends Echo(Hidden(Template(HTMLElement))) {
 
   @repaint
   render(payload) {
-    this.#innerHTML = []
-      .concat(payload)
-      .map((data) => interpolate(super.template, data))
-      .join("");
+    requestAnimationFrame(() => {
+      this.#innerHTML = []
+        .concat(payload)
+        .map((data) => interpolate(super.template, data))
+        .join("");
+    });
     return this;
   }
 }

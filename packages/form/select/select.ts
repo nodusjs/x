@@ -57,7 +57,7 @@ class Select extends Echo(Hidden(Template(HTMLElement))) {
   }
 
   get id() {
-    return this.element.id;
+    return this.element.id || this.name;
   }
 
   @attributeChanged("id")
@@ -170,10 +170,12 @@ class Select extends Echo(Hidden(Template(HTMLElement))) {
 
   @around("reset")
   render(payload) {
-    this.element.innerHTML = [{}]
-      .concat(payload)
-      .map((data) => interpolate(super.template, data))
-      .join("");
+    requestAnimationFrame(() => {
+      this.element.innerHTML = [{}]
+        .concat(payload)
+        .map((data) => interpolate(super.template, data))
+        .join("");
+    });
     return this;
   }
 
