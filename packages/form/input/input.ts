@@ -55,7 +55,7 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   get id() {
-    return this.element.id;
+    return this.element.id || this.name;
   }
 
   @attributeChanged("id")
@@ -68,7 +68,7 @@ class Input extends Echo(Hidden(HTMLElement)) {
   }
 
   @attributeChanged("inputmode")
-  set elementMode(value) {
+  set inputMode(value) {
     this.element.inputmode = value;
   }
 
