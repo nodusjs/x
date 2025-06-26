@@ -1,3 +1,4 @@
+import "./checkbox";
 import "./form";
 import "./input";
 import "./label";
