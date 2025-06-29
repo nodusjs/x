@@ -1,17 +1,17 @@
 import { html } from "@nodusjs/std/dom";
 
-export const component = (textarea) => html`
+export const component = (checkbox) => html`
   <input
     type="checkbox"
-    ${textarea.id ? `id="${textarea.id}"` : ""}
-    ${textarea.name ? `name="${textarea.name}"` : ""}
-    ${textarea.checked ? "checked" : ""}
-    ${textarea.disabled ? "disabled" : ""}
-    ${textarea.readonly ? "readonly" : ""}
-    ${textarea.required ? "required" : ""}
+    ${checkbox.id ? `id="${checkbox.id}"` : ""}
+    ${checkbox.name ? `name="${checkbox.name}"` : ""}
+    ${checkbox.checked ? "checked" : ""}
+    ${checkbox.disabled ? "disabled" : ""}
+    ${checkbox.readonly ? "readonly" : ""}
+    ${checkbox.required ? "required" : ""}
   />
   <wrap>
-    <label for="${textarea.id}">
+    <label for="${checkbox.id}">
       <slot name="label"></slot>
     </label>
     <slot name="validity"></slot>
