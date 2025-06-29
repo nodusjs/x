@@ -1,5 +1,5 @@
 import { around } from "@middleware";
-import { Hidden } from "@mixin";
+import { Hidden, Width } from "@mixin";
 import {
   attributeChanged,
   define,
@@ -28,7 +28,7 @@ import { style } from "./style";
 
 @define("x-textarea")
 @paint(component, style)
-class Textarea extends Echo(Hidden(HTMLElement)) {
+class Textarea extends Echo(Hidden(Width(HTMLElement))) {
   #controller;
   #element;
   #internals;

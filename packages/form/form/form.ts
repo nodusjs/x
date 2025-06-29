@@ -1,4 +1,4 @@
-import { Hidden, Template } from "@mixin";
+import { Hidden, Template, Width } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import { paint } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
@@ -10,7 +10,7 @@ import { style } from "./style";
 
 @define("x-form")
 @paint(component, style)
-class Form extends Echo(Hidden(Template(HTMLElement))) {
+class Form extends Echo(Hidden(Template(Width(HTMLElement)))) {
   #internals;
 
   get internals() {

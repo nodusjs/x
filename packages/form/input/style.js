@@ -1,6 +1,6 @@
 import { css } from "@nodusjs/std/dom";
 
-export const style = () =>
+export const style = (input) =>
   css`
     :host {
       align-items: start;
@@ -8,7 +8,8 @@ export const style = () =>
       display: flex;
       flex-direction: column;
       gap: var(--spacing-sm);
-      width: var(--width-xxs);
+      width: ${input.width};
+      width: var(--width-${input.width}, ${input.width});
 
       input {
         appearance: none;
@@ -24,6 +25,7 @@ export const style = () =>
         line-height: var(--line-height-text-md);
         padding: var(--spacing-md) var(--spacing-lg);
         width: 100%;
+
 
         &[type="number"] {
           -moz-appearance: textfield;

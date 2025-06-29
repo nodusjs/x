@@ -1,5 +1,5 @@
 import { around } from "@middleware";
-import { Hidden } from "@mixin";
+import { Hidden, Width } from "@mixin";
 import {
   attributeChanged,
   define,
@@ -27,7 +27,7 @@ import { style } from "./style";
 
 @define("x-input")
 @paint(component, style)
-class Input extends Echo(Hidden(HTMLElement)) {
+class Input extends Echo(Hidden(Width(HTMLElement))) {
   #controller;
   #element;
   #internals;

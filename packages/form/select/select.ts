@@ -1,6 +1,6 @@
 import { interpolate } from "@directive/render/interpolate";
 import { around } from "@middleware";
-import { Hidden, Template } from "@mixin";
+import { Hidden, Template, Width } from "@mixin";
 import {
   attributeChanged,
   define,
@@ -29,7 +29,7 @@ import { style } from "./style";
 
 @define("x-select")
 @paint(component, style)
-class Select extends Echo(Hidden(Template(HTMLElement))) {
+class Select extends Echo(Hidden(Template(Width(HTMLElement)))) {
   #controller;
   #element;
   #internals;

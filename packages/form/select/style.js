@@ -1,6 +1,6 @@
 import { css } from "@nodusjs/std/dom";
 
-export const style = () =>
+export const style = (select) =>
   css`
     :host {
       align-items: start;
@@ -8,7 +8,9 @@ export const style = () =>
       display: flex;
       flex-direction: column;
       gap: var(--spacing-sm);
-      width: var(--width-xxs);
+      width: ${select.width};
+      width: var(--width-${select.width}, ${select.width});
+
 
       wrap {
         position: relative;
@@ -28,6 +30,7 @@ export const style = () =>
           line-height: var(--line-height-text-md);
           padding: var(--spacing-md) var(--spacing-5xl) var(--spacing-md) var(--spacing-lg);
           width: 100%;
+
 
           &:active,
           &:hover {

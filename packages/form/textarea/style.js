@@ -1,6 +1,6 @@
 import { css } from "@nodusjs/std/dom";
 
-export const style = () =>
+export const style = (textarea) =>
   css`
     :host {
       align-items: start;
@@ -8,7 +8,8 @@ export const style = () =>
       display: flex;
       flex-direction: column;
       gap: var(--spacing-sm);
-      width: var(--width-xxs);
+      width: ${textarea.width};
+      width: var(--width-${textarea.width}, ${textarea.width});
 
       textarea {
         appearance: none;
@@ -27,6 +28,7 @@ export const style = () =>
         padding: var(--spacing-md) var(--spacing-lg);
         resize: none;
         width: 100%;
+
 
         &:active,
         &:hover {
