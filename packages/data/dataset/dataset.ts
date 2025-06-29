@@ -20,7 +20,7 @@ class Dataset extends Echo(Headless(HTMLElement)) {
   }
 
   get value() {
-    return this.#storage.values();
+    return this.#storage.values;
   }
 
   @around(dispatch)
