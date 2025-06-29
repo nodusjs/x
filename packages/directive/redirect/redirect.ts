@@ -20,3 +20,5 @@ class Redirect extends Echo(Headless(HTMLElement)) {
     return this;
   }
 }
+
+export default Redirect;
