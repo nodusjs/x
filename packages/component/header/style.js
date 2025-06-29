@@ -21,10 +21,11 @@ export const style = () =>
           align-items: center;
           display: flex;
           gap: var(--spacing-2xl);
-          justify-content: space-between;
+          justify-content: start;
 
           action {
             display: flex;
+            flex: 2;
             gap: var(--spacing-2xl);
             justify-content: end;
           }
