@@ -17,12 +17,14 @@ export class Storage {
     return this;
   }
 
-  push(data) {
-    const key = data[this.#dataset.upsert] ?? uuid();
-    const value = this.#map.get(key) ?? {};
-    this.#map.set(key, {
-      ...Object.assign(value, data),
-      [this.#dataset.upsert]: key,
+  push(payload) {
+    [].concat(payload).forEach((data) => {
+      const key = data[this.#dataset.upsert] ?? uuid();
+      const value = this.#map.get(key) ?? {};
+      this.#map.set(key, {
+        ...Object.assign(value, data),
+        [this.#dataset.upsert]: key,
+      });
     });
     return this;
   }

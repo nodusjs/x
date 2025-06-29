@@ -39,11 +39,13 @@ class Fetch extends Echo(Headless(HTMLElement)) {
       .json();
   }
 
-  async [dispatch](response) {
-    const { data, error } = await response;
-    error
-      ? this.dispatchEvent(new CustomEvent("error", { detail: data }))
-      : this.dispatchEvent(new CustomEvent("ok", { detail: data }));
+  [dispatch](response) {
+    requestIdleCallback(async () => {
+      const { data, error } = await response;
+      error
+        ? this.dispatchEvent(new CustomEvent("error", { detail: data }))
+        : this.dispatchEvent(new CustomEvent("ok", { detail: data }));
+    });
     return this;
   }
 

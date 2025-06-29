@@ -20,11 +20,11 @@ class Macro extends Echo(Headless(HTMLElement)) {
   @connected
   [run]() {
     try {
-      const X = { args, params };
-      const detail = new Function("X", `return ${this.execute}`)(X);
-      requestIdleCallback(() =>
-        this.dispatchEvent(new CustomEvent("ok", { detail })),
-      );
+      requestIdleCallback(() => {
+        const X = { args, params };
+        const detail = new Function("X", `return ${this.execute}`)(X);
+        this.dispatchEvent(new CustomEvent("ok", { detail }));
+      });
     } catch (error) {
       this.dispatchEvent(new CustomEvent("error", { detail: error.message }));
     }
