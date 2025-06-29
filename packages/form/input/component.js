@@ -12,6 +12,7 @@ export const component = (input) => html`
     ${input.min ? `min="${input.min}"` : ""}
     ${input.minLength ? `minlength="${input.minLength}"` : ""}
     ${input.name ? `name="${input.name}"` : ""}
+    ${input.placeholder ? `placeholder="${input.placeholder}"` : ""}
     ${input.type ? `type="${input.type}"` : ""}
     ${input.value ? `value="${input.value}"` : ""}
     ${input.readonly ? "readonly" : ""}
