@@ -3,7 +3,7 @@ import { css } from "@nodusjs/std/dom";
 export const style = (render) =>
   css`
     :host, {
-    :host[layout="list"], {
+    :host[layout="list"] {
       box-sizing: border-box;
       container-type: inline-size;
       display: flex;
@@ -12,7 +12,7 @@ export const style = (render) =>
       width: 100%;
     }
 
-    .host[layout="grid"] {
+    :host[layout="grid"] {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
 
