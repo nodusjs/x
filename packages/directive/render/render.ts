@@ -1,23 +1,35 @@
 import { Hidden, Template } from "@mixin";
-import { define } from "@nodusjs/std/directive";
-import { paint, repaint } from "@nodusjs/std/dom";
+import { attributeChanged, define } from "@nodusjs/std/directive";
+import { paint, repaint, retouch } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import { component } from "./component";
+import { content } from "./interface";
 import { interpolate } from "./interpolate";
 import { style } from "./style";
 
 @define("x-render")
 @paint(component, style)
 class Render extends Echo(Hidden(Template(HTMLElement))) {
-  #innerHTML;
+  #content;
   #internals;
+  #gap;
 
-  get innerHTML() {
-    return (this.#innerHTML ??= "");
+  get [content]() {
+    return (this.#content ??= "");
   }
 
   get internals() {
     return (this.#internals ??= this.attachInternals());
+  }
+
+  get gap() {
+    return (this.#gap ??= "2xl");
+  }
+
+  @attributeChanged("gap")
+  @retouch
+  set gap(value) {
+    this.#gap = value;
   }
 
   constructor() {
@@ -28,7 +40,7 @@ class Render extends Echo(Hidden(Template(HTMLElement))) {
   @repaint
   render(payload) {
     requestAnimationFrame(() => {
-      this.#innerHTML = []
+      this.#content = []
         .concat(payload)
         .map((data) => interpolate(super.template, data))
         .join("");
