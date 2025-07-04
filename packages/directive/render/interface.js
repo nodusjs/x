@@ -1,1 +1,1 @@
-export const content = symbol("content");
+export const content = Symbol("content");
