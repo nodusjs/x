@@ -33,5 +33,5 @@
   "source": "index.js",
   "styles": "dist/x.css",
   "type": "module",
-  "version": "0.21.4"
+  "version": "0.22.0"
 }
