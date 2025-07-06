@@ -4,5 +4,6 @@ import "./macro";
 import "./on";
 import "./redirect";
 import "./render";
+import "./responsive";
 import "./route";
 import "./title";
