@@ -1,5 +1,20 @@
 import { css } from "@nodusjs/std/dom";
 
+/**
+ * @function style
+ *
+ * @param {object} button - A instância do componente `x-button`. Suas
+ * propriedades (`button.color`, `button.variant`, etc.) são usadas para
+ * selecionar os tokens corretos.
+ * @returns {CSSStyleSheet} A folha de estilo final e reativa para o botão.
+ *
+ * @description
+ * Gera a folha de estilo (`CSSStyleSheet`) dinâmica para o componente `x-button`.
+ * Esta função é reativa: ela consome as propriedades atuais do componente
+ * (como `color`, `variant`, `size`) para construir os nomes das variáveis CSS
+ * (Design Tokens) que serão aplicadas, permitindo que a aparência do botão
+ * mude em resposta a alterações de estado.
+ */
 export const style = (button) =>
   css`
     :host {

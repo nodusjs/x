@@ -1,5 +1,23 @@
 import { css } from "@nodusjs/std/dom";
 
+/**
+ * @function token
+ *
+ * @description
+ * Gera uma folha de estilo (`CSSStyleSheet`) que define os Design Tokens
+ * para o componente `x-button`. Estes tokens são variáveis CSS que controlam
+ * a aparência do botão em diferentes variantes, cores e tamanhos.
+ *
+ * A estrutura dos tokens segue o padrão:
+ * `--button-[property]-[color]-[variant]_[state]`
+ *
+ * - `property`: A propriedade CSS a ser controlada (ex: `background-color`, `border`).
+ * - `color`: O tema de cor (ex: `brand`, `error`).
+ * - `variant`: A variante visual (ex: `solid`, `outlined`, `ghost`, `link`).
+ * - `state`: (Opcional) O estado de interação (ex: `_hover`).
+ *
+ * @returns {CSSStyleSheet} A folha de estilo contendo todos os tokens do botão.
+ */
 export const token = () =>
   css`
     :host {
