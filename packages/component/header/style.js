@@ -1,5 +1,18 @@
 import { css } from "@nodusjs/std/dom";
 
+/**
+ * @function style
+ *
+ * @returns {CSSStyleSheet} A folha de estilo final para o cabeçalho.
+ *
+ * @description
+ * Gera a folha de estilo (`CSSStyleSheet`) para o componente `x-header`.
+ *
+ * Esta função define o layout principal do cabeçalho, estabelecendo-o como um
+ * contêiner flexível de largura total com uma altura fixa e responsiva.
+ * Ela também organiza as seções internas de 'content' e 'action' e gerencia
+ * o estado de visibilidade do componente através da pseudo-classe `:state(hidden)`.
+ */
 export const style = () =>
   css`
     :host {

@@ -11,6 +11,34 @@ import { emitter } from "./interface";
 import { style } from "./style";
 import { token } from "./token";
 
+/**
+ * @class Button
+ *
+ * @summary
+ * Um componente de botão customizável e acessível, projetado para ser
+ * o bloco de construção fundamental para interações em um Design System.
+ *
+ * @description
+ * O `x-button` é um Web Component completo que encapsula lógica de
+ * renderização, reatividade, associação com formulários e estilização
+ * dinâmica. Ele é construído sobre a biblioteca `@nodusjs/std` e é
+ * composto por vários mixins (`Disabled`, `Echo`, `Hidden`, `Width`)
+ * que lhe conferem comportamentos reutilizáveis.
+ *
+ * A aparência do botão é controlada por um conjunto de propriedades
+ * reativas e Design Tokens, permitindo uma customização profunda para
+ * se adaptar a diferentes contextos de UI.
+ *
+ * @element x-button
+ * @extends {Disabled(Echo(Hidden(Width(HTMLElement))))}
+ *
+ * @see {@link define} - Para o registro do custom element.
+ * @see {@link paint} - Para a renderização inicial do componente.
+ * @see {Echo} - Para a integração com o sistema de dataflow.
+ * @see {Disabled} - Para o gerenciamento do estado 'disabled'.
+ * @see {Hidden} - Para o gerenciamento do estado 'hidden'.
+ * @see {Width} - Para o gerenciamento da largura do componente.
+ */
 @define("x-button")
 @paint(component, token, style)
 class Button extends Disabled(Echo(Hidden(Width(HTMLElement)))) {

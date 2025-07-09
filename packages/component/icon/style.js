@@ -1,5 +1,21 @@
 import { css } from "@nodusjs/std/dom";
 
+/**
+ * @function style
+ *
+ * @param {object} icon - A instância do componente `x-icon`. A propriedade
+ * `icon.size` é usada para determinar o `font-size`.
+ * @returns {CSSStyleSheet} A folha de estilo final para o ícone.
+ *
+ * @description
+ * Gera a folha de estilo (`CSSStyleSheet`) dinâmica para o componente `x-icon`.
+ *
+ * Esta função define a aparência base para a renderização de um ícone,
+ * configurando a fonte para 'Material Symbols Outlined' e outros padrões
+ * de texto. O tamanho do ícone é controlado dinamicamente pela propriedade
+ * `size` da instância do componente, que seleciona o token de tamanho
+ * apropriado.
+ */
 export const style = (icon) =>
   css`
     :host {
