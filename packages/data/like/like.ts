@@ -1,3 +1,4 @@
+import { around } from "@middleware";
 import { Headless } from "@mixin";
 import { attributeChanged, define } from "@nodusjs/std/directive";
 import Echo from "@nodusjs/std/echo";

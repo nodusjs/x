@@ -1,7 +1,7 @@
 import { Hidden } from "@mixin";
 import { define } from "@nodusjs/std/directive";
 import { attributeChanged } from "@nodusjs/std/directive";
-import { paint, retouch } from "@nodusjs/std/dom";
+import { paint, repaint, retouch } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import { component } from "./component";
 import { style } from "./style";

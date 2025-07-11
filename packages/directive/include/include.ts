@@ -4,6 +4,7 @@ import { paint, repaint } from "@nodusjs/std/dom";
 import { willPaint } from "@nodusjs/std/dom";
 import Echo from "@nodusjs/std/echo";
 import { component } from "./component";
+import { render, textContent } from "./interface";
 import { request } from "./request";
 import { style } from "./style";
 
@@ -59,7 +60,7 @@ class Include extends Echo(HTMLElement) {
    * Obtém o conteúdo HTML buscado que será renderizado.
    * @returns {string} O conteúdo do arquivo HTML.
    */
-  get textContent() {
+  get [textContent]() {
     return (this.#textContent ??= "");
   }
 

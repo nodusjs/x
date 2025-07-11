@@ -1,3 +1,4 @@
+import { html } from "@nodusjs/std/dom";
 import { textContent } from "./interface";
 
 /**
