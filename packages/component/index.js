@@ -3,3 +3,4 @@ import "./card";
 import "./footer";
 import "./header";
 import "./icon";
+import "./modal";
