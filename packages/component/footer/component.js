@@ -18,7 +18,7 @@ import { html } from "@nodusjs/std/dom";
  */
 export const component = () =>
   html`
-    <header>
+    <footer>
       <x-container>
         <content>
           <slot></slot>
@@ -27,5 +27,5 @@ export const component = () =>
           </action>
         </content>
       </x-container>
-    </header>
+    </footer>
   `;
