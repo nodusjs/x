@@ -20,7 +20,9 @@ export const style = (modal) =>
       box-sizing: border-box;
       display: ${modal.opened ? "block" : "none"};
       height: 100vh;
+      left: 0;
       position: fixed;
+      top: 0;
       width: 100vw;
 
       overflow {
