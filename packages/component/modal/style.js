@@ -18,7 +18,7 @@ export const style = (modal) =>
   css`
     :host {
       box-sizing: border-box;
-      display: ${modal.opened ? "block" : "none"};
+      display: ${modal.opened ? "flex" : "none"};
       height: 100vh;
       left: 0;
       position: fixed;
@@ -26,11 +26,12 @@ export const style = (modal) =>
       width: 100vw;
 
       overflow {
-        align-content: center;
+        align-items: center;
         background-color: var(--bg-overlay) 0.7;
         backdrop-filter: var(--backdrop-blur-md);
         display: block;
         height: 100%;
+        justify-content: center;
         width: 100%;
 
         dialog {
