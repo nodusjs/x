@@ -18,7 +18,7 @@ export const style = (modal) =>
   css`
     :host {
       box-sizing: border-box;
-      display: ${modal.opened ? "flex" : "none"};
+      display: ${modal.opened ? "block" : "none"};
       height: 100vh;
       left: 0;
       position: fixed;
@@ -29,7 +29,7 @@ export const style = (modal) =>
         align-items: center;
         background-color: var(--bg-overlay) 0.7;
         backdrop-filter: var(--backdrop-blur-md);
-        display: block;
+        display: flex;
         height: 100%;
         justify-content: center;
         width: 100%;
