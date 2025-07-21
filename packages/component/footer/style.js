@@ -22,10 +22,6 @@ export const style = () =>
       height: 72px;
       width: 100%;
 
-      @content (min-width: 768px) {
-        height: 80px;
-      }
-
       footer {
         container-type: inline-size;
         width: 100%;
