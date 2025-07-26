@@ -23,9 +23,7 @@ class Form extends Echo(Hidden(Template(Width(HTMLElement)))) {
   }
 
   reset() {
-    const init = { bubbles: true, cancelable: true };
-    const event = new Event("reset", init);
-    this.shadowRoot.querySelector("form").dispatchEvent(event);
+    this.shadowRoot.querySelector("form").reset();
     return this;
   }
 
