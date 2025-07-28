@@ -1,3 +1,4 @@
+import { args, params } from "@directive/route";
 import { around } from "@middleware";
 import { Headless } from "@mixin";
 import { attributeChanged, connected, define } from "@nodusjs/std/directive";
@@ -49,7 +50,7 @@ class Macro extends Echo(Headless(HTMLElement)) {
    */
   @attributeChanged("autorun", truthy)
   set autorun(value) {
-    this.#execute = value;
+    this.#autorun = value;
   }
 
   /**
